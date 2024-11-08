@@ -8,7 +8,7 @@
 
 
 .light {
-    background-color: #fff0f1;
+    background-color: #fff;
     color: #023047;
 }
 
@@ -30,6 +30,12 @@
 
             }
 
+        }
+    }
+
+    section{
+        h1{
+            color: white;
         }
     }
 
@@ -61,16 +67,6 @@
         }
     }
 
-    section {
-        form {
-            div {
-                div {
-                    background-color: #1b263b;
-                }
-                 
-            }
-            
-        }
-    }
+   
 
 }
