@@ -9,27 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/dark.css">
 
-    <style>
-        /* * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Kite One', cursive;
-        }
-
-
-
-        .light {
-            background-color: #fff0f1;
-            color: #121212;
-        }
-
-        .dark {
-            background-color: #121212;
-            color: #fff0f1;
-        } */
-    </style>
-
 </head>
 
 <body class=" flex flex-col  gap-4">
@@ -130,14 +109,10 @@
             <img src="images/background_.jpg" alt="background home"
                 class="absolute inset-0 w-full h-full object-cover ">
 
-            <div
+            <!-- <div
                 class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
 
-                <marquee behavior="alternate" scrollamount="20">
-                    <h1>text text text text</h1>
-                </marquee>
-
-            </div>
+            </div> -->
         </div>
 
 
@@ -158,14 +133,14 @@
                 class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
 
 
-                <div class="w-4/5 h-full  flex flex-col py-2 gap-2 ">
+                <div class="w-4/5 h-full max-lg:w-[95%]  flex flex-col py-2 gap-2 max-md:w-full ">
                     <div
-                        class="bg-blue-500 h-[10%] flex flex-wrap justify-evenly items-center border-2 rounded-md border-yellow-600  ">
+                        class="bg-blue-500 h-[10%] grid lg:grid-cols-4 max-lg:grid-cols-2  max-md:grid-cols-2  border-2 rounded-md border-yellow-600  ">
                         <!-- En téte de quiz -->
-                        <div>barre</div>
-                        <div>15/50</div>
-                        <div>25 pts</div>
-                        <div>timer</div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200"><input type="range"></div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">15/50</div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">25 pts</div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">timer</div>
                     </div>
                     <div class="bg-blue-500 h-[90%] border-2 rounded-md border-yellow-600">
                         <form action="quiz.html" class=" h-full flex flex-col gap-4 px-4 py-4">
@@ -194,50 +169,7 @@
 
     <!-- ============================================================================================================================== -->
 
-    <!-- <section class="bg-blue-500 w-full h-[80vh] justify-center flex">
-        
-        <div class="relative w-full h-screen overflow-hidden">
-            <img src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover ">
-
-            <div
-                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-
-
-                <div class="w-4/5 h-full  flex flex-col py-2 gap-2 ">
-                    <div
-                        class="bg-yellow-100 h-[10%] flex flex-wrap justify-evenly items-center border-2 rounded-md border-yellow-600  ">
-                        <div>barre</div>
-                        <div>15/50</div>
-                        <div>25 pts</div>
-                        <div>timer</div>
-                    </div>
-                    <div class="h-[90%] border-2 rounded-md border-yellow-600">
-                        <form action="quiz.html" class=" h-full flex flex-col gap-4 px-4 py-4">
-                            <div class="  flex h-[45%] items-center gap-6">
-                                <img src="images/icones/" alt="Type">
-                                <p>text de la question </p>
-                            </div>
-                            <div class=" w-full h-[45%] flex flex-row gap-4 justify-center  ">
-                                <textarea class="bg-emerald-100 w-full border-2 resize-none rounded-md border-white hover:border-yellow-600 "></textarea> 
-
-                                
-                            </div>
-                            <div class=" h-[10%] flex justify-end items-center ">
-                                <button
-                                    class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
-                                    suivant
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> -->
-
+   
     <!-- section 2 ==================================================================================================================== -->
     <!-- ============================================================================================================================== -->
 

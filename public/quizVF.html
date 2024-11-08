@@ -147,27 +147,27 @@
                 class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
 
 
-        <div class="w-4/5 h-full  flex flex-col py-2 gap-2 ">
+        <div class="w-4/5 h-full max-lg:w-[95%]  flex flex-col py-2 gap-2 max-md:w-full ">
             <div
-                class="bg-blue-500 h-[10%] flex flex-wrap justify-evenly items-center border-2 rounded-md border-yellow-600  ">
-                <!-- En téte de quiz -->
-                <div>barre</div>
-                <div>15/50</div>
-                <div>25 pts</div>
-                <div>timer</div>
-            </div>
+                        class="bg-blue-500 h-[10%] grid lg:grid-cols-4 max-lg:grid-cols-2  max-md:grid-cols-2  border-2 rounded-md border-yellow-600  ">
+                        <!-- En téte de quiz -->
+                        <div class=" flex justify-center items-center hover:bg-gray-200"><input type="range"></div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">15/50</div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">25 pts</div>
+                        <div class=" flex justify-center items-center hover:bg-gray-200">timer</div>
+                    </div>
             <div class="bg-blue-500 h-[90%] border-2 rounded-md border-yellow-600">
                 <form action="quiz.html" class=" h-full flex flex-col gap-4 px-4 py-4">
                     <div class="  flex h-[45%] items-center gap-6">
                         <img src="images/icones/" alt="Type">
                         <p>text de la question </p>
                     </div>
-                    <div class=" w-full h-[45%] flex flex-row gap-4 justify-center  ">
-                        <div class="bg-emerald-100 w-full border-2 rounded-md border-white hover:border-yellow-600 ">
+                    <div class=" w-full h-[45%] flex flex-row gap-4 justify-center max-md:flex-wrap max-md:gap-2 ">
+                        <div class="bg-emerald-100 w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center ">
                             <!-- <input type="radio"> -->
                             Vrai
                         </div>
-                        <div class="bg-emerald-100 w-full border-2 rounded-md border-white hover:border-yellow-600 ">
+                        <div class="bg-emerald-100 w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center ">
                             <!-- <input type="radio"> -->
                             Faux
                         </div>

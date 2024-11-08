@@ -9,10 +9,68 @@
 
 .light {
     background-color: #fff0f1;
-    color: #121212;
+    color: #023047;
 }
 
 .dark {
-    background-color: #121212;
+    background-color: #023047;
     color: #fff0f1;
+
+    header {
+        background-color: #1b263b;
+        color: white;
+
+        nav {
+            div {
+                div {
+                    div a {
+                        color: #ffb805;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    footer {
+        background-color: #1b263b;
+        color: white;
+    }
+
+    button:hover {
+        color: #1b263b;
+
+    }
+
+    select,
+    input,
+    textarea {
+        background-color: #1b263b;
+    }
+
+    form {
+        background-color: #000;
+    }
+
+    section {
+        div {
+            a {
+                background-color: #1b263b;
+            }
+        }
+    }
+
+    section {
+        form {
+            div {
+                div {
+                    background-color: #1b263b;
+                }
+                 
+            }
+            
+        }
+    }
+
 }
