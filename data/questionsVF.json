@@ -1,0 +1,26 @@
+[
+  {
+    "id_quiz": 1,
+    "type": "V/F",
+    "questions": "jhjh",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "gfgg",
+    "points": 5,
+    "timeQuestion": "05:00"
+  },
+  {
+    "id_quiz": 1,
+    "type": "V/F",
+    "questions": "vffv",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "vffv",
+    "points": 13,
+    "timeQuestion": "13:00"
+  }
+]

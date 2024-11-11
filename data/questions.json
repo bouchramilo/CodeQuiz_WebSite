@@ -1,41 +1,22 @@
 [
   {
     "id_quiz": 1,
-    "type": "qcm",
-    "questions": "ff",
-    "reponses": [
-      "cc",
-      "vv",
-      "qq",
-      "cc"
-    ],
-    "reponces_correct": [
-      false,
-      true,
-      false,
-      false
-    ],
-    "Explication": "mù",
-    "points": 5
-  },
-  {
-    "id_quiz": 1,
     "type": "QCM",
-    "questions": "ff",
+    "questions": "qcm mcq",
     "reponses": [
-      "dd",
-      "ff",
-      "fff",
-      "ff"
+      "qcm mcq",
+      "qcm mcq",
+      "qcm mcq",
+      "qcm mcq"
     ],
     "reponces_correct": [
-      false,
-      true,
-      false,
-      false
+      null,
+      "qcm mcq",
+      null,
+      null
     ],
-    "Explication": "gfhdj",
+    "Explication": "qcm mcqqcm mcqqcm mcqqcm mcqv qcm mcq qcm mcq",
     "points": 12,
-    "timeQuestion": "00:30"
+    "timeQuestion": "12:00"
   }
 ]

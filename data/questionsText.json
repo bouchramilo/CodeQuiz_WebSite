@@ -1,0 +1,30 @@
+[
+  {
+    "id_quiz": 1,
+    "type": "Textuel",
+    "questions": "44",
+    "reponces_correct": [
+      "kkkk",
+      "kk",
+      "kk",
+      "kk"
+    ],
+    "Explication": "kkkk444",
+    "points": 4,
+    "timeQuestion": "04:00"
+  },
+  {
+    "id_quiz": 1,
+    "type": "Textuel",
+    "questions": "text test",
+    "reponces_correct": [
+      "text test",
+      "text test",
+      "text test",
+      "text test"
+    ],
+    "Explication": "text test text test text test",
+    "points": 14,
+    "timeQuestion": "14:00"
+  }
+]

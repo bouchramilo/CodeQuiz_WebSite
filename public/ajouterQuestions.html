@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CodeQuiz - Admin - Quiz</title>
+    <title>CodeQuiz - Admin - Ajouter-Question</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -102,27 +102,31 @@
 
     <!-- ============================================================================================================================== -->
     <!-- section header_admin ==================================================================================================================== -->
-
+<div class="questionFormContainer"></div>
     <section class=" h-16">
         <div
             class="w-full h-full lg:flex lg:flex-row max-lg:grid max-lg:grid-cols-4 justify-evenly items-center bg-yellow-600 gap-2 max-md:grid max-md:grid-cols-2 max-md:gap-1 max-md:p-1">
-            <a href="admin.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="admin.html"
+                class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
                     <h1 class="max-md:text-xs">Gestion des Quiz</h1>
                 </button>
             </a>
-            <a href="admin_2.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="admin_2.html"
+                class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
-                    
+
                     <h1 class="max-md:text-xs">Afficher des Questions</h1>
                 </button>
             </a>
-            <a href="ajouterQuestions.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="quiz_QCM.html"
+                class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
                     <h1 class="max-md:text-xs">Statistiques</h1>
                 </button>
             </a>
-            <a href="quiz_textuel.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="quiz_textuel.html"
+                class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
                     <h1 class="max-md:text-xs">Gestion des utilisateurs</h1>
                 </button>
@@ -130,216 +134,13 @@
         </div>
     </section>
 
-    <!-- ============================================================================================================================== -->
-    <!-- section tableau_quizs ==================================================================================================================== -->
-
-    <section class="w-full h-max  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-2">
-
-
-        <div class="w-full">
-            <div class="relative w-full h-20 overflow-hidden">
-                <img id="bg" src="images/background_.jpg" alt="background home"
-                    class="absolute inset-0 w-full h-full object-cover ">
-
-                <div
-                    class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-                    <h1 class="text-2xl max-md:text-xl">Liste des quizs :</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full flex flex-col items-center  ">
-
-            <table class="w-[85%] max-md:w-full max-sm:mx-2 max-sm:text-[12px] h-max border-2 border-red-800">
-                <thead>
-                    <tr class="bg-blue-500">
-                        <th class="border-2 border-black h-4 w-1/6">ID de quiz</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nom de quiz</th>
-                        <th class="border-2 border-black h-4 w-1/6">Catégorie</th>
-                        <th class="border-2 border-black h-4 w-1/6">Statue</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nombre de questions</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nombre de participant</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">Mathématique</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">active</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">25</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">5</td>
-                    </tr>
-                    <tr>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">Mathématique</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">active</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">25</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">5</td>
-                    </tr> -->
-
-                </tbody>
-            </table>
-
-
-        </div>
 
 
 
-    </section>
 
-    <!-- ============================================================================================================================== -->
-    <!-- section 2 ==================================================================================================================== -->
-    <section class="w-full h-[2vh]  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-10">
-
-        <div class="relative w-full h-screen overflow-hidden">
-            <img id="bg2" src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover ">
-
-            <div
-                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-
-
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ============================================================================================================================== -->
-    <!-- section creation_quiz ==================================================================================================================== -->
-
-    <section class=" ">
-
-        <div class="w-full flex flex-col justify-center items-center gap-6 py-3">
-            <div class=" ">
-                <h1 class="text-2xl max-md:text-xl ">
-                    Création d'un quiz:
-                </h1>
-            </div>
-
-            <!-- Création des quizs  -->
-            <div class="w-full flex justify-center px-3 ">
-
-                <form id="quiz_form" action="" class=" bg-gray-200 w-[90%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md max-md:gap-6 max-md:text-sm">
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nom du quiz :</label>
-                        <input type="text" id="nom" name="nom" placeholder="Nom du quiz"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Description :</label>
-                        <input type="text" id="description" name="description" placeholder="Description"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Catégorie :</label>
-                        <input type="text" id="categorie" name="categorie" placeholder="Catégorie"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Niveau de difficulté :</label>
-                        <select name="difficulte" id="difficulte"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                            <option value="Facile">Facile</option>
-                            <option value="Moyenne">Moyenne</option>
-                            <option value="Difficile">Difficile</option>
-                        </select>
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Status :</label>
-                        <select name="status" id="status"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question :</label>
-                        <input type="number" id="nbQuestions" name="nbQuestions" placeholder="20"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question QCM :</label>
-                        <input type="number" id="nbrQestionsQCM" name="nbrQestionsQCM" placeholder="5"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question Vrai/Faux :</label>
-                        <input type="number" id="nbrQestionsVF" name="nbrQestionsVF" placeholder="5"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question Textuel :</label>
-                        <input type="number" id="nbrQestionsTxt" name="nbrQestionsTxt" placeholder="5"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Temps de quiz :</label>
-                        <input type="time" id="TimeQuiz" name="TimeQuiz" placeholder="15:00"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
-                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> images de quiz :</label>
-                        <input type="file" id="imagesQuiz" name="imagesQuiz"
-                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                    </div>
-
-                    <div class="w-full lg:h-10 max-md:h-14 flex flex-row justify-center pt-2 ">
-                        <button type="submit"
-                            class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
-                            créer quizze
-                        </button>
-                    </div>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ============================================================================================================================== -->
-    <!-- section 2 ============================================================================================================================== -->
-
-    <section class="w-full h-[2vh]  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-10">
-
-        <div class="relative w-full h-screen overflow-hidden">
-            <img id="bg3" src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover ">
-
-            <div
-                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-
-
-            </div>
-        </div>
-
-    </section>
-
-    <div id="questionContainer"></div>
-
-
-
-    <!-- ============================================================================================================================== -->
-    <div class="questionFormContainer"></div>
     <!-- ============================================================================================================================== -->
     <!-- section QCM quiz ============================================================================================================================== -->
-    <!-- <section class="max-md:text-sm " >
+    <section class="max-md:text-sm ">
 
         <div class="w-full flex flex-col justify-center items-center gap-6 py-3 ">
             <div class=" ">
@@ -350,43 +151,54 @@
 
             <div class="w-full flex justify-center px-3 ">
 
-                <form action="" id="questionForm" style="display: none;" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
+                <form action="" id="questionForm" 
+                    class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
 
                     <div class="flex lg:flex-row gap-2 max-md:flex-col">
                         <div class="flex flex-col gap-2 p-2 w-1/2 max-md:w-full  justify-center  ">
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col  gap-1 w-full">
                                 <input type="hidden" id="id_quiz" value="1">
-                                <input type="hidden" id="typeQuestion" value="QCM"> 
+                                <input type="hidden" id="typeQuestion" value="QCM">
                                 <label for="question" class="lg:w-1/2 max-md:w-full">Question : </label>
                                 <input type="text" placeholder="Question" id="question"
-                                    class=" h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                    class=" h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                    required>
                             </div>
                             <div class="flex flex-col gap-2 w-full ">
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
-                                    <label for="option 1" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 1 : </label>
+                                    <label for="option 1" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 1 :
+                                    </label>
                                     <input type="text" placeholder="Option 1" id="option_1"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                        required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
-                                    <label for="option 2" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 2 : </label>
+                                    <label for="option 2" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 2 :
+                                    </label>
                                     <input type="text" placeholder="Option 2" id="option_2"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                        required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
-                                    <label for="option 3" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 3 : </label>
+                                    <label for="option 3" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 3 :
+                                    </label>
                                     <input type="text" placeholder="Option 3" id="option_3"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                        required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
-                                    <label for="option 4" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 4 : </label>
+                                    <label for="option 4" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 4 :
+                                    </label>
                                     <input type="text" placeholder="Option 4" id="option_4"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                        required>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="w-1/2 max-md:w-full flex flex-col gap-2 border-l-2 max-md:border-none border-yellow-600 max-md:border-non pl-2 ">
+                        <div
+                            class="w-1/2 max-md:w-full flex flex-col gap-2 border-l-2 max-md:border-none border-yellow-600 max-md:border-non pl-2 ">
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col">
                                 <h3 class="lg:w-1/2 max-md:w-full max-lg:w-full">Les bonnes réponses : </h3>
                                 <div class="flex flex-col lg:w-1/2 max-md:w-full max-lg:w-full items-center ">
@@ -397,16 +209,24 @@
                                 </div>
                             </div>
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
-                                <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Explication</label>
-                                <textarea type="text" placeholder="Explication " id="explication" class="h-28 lg:w-1/2 max-md:w-full max-lg:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required></textarea>
+                                <label for="explication"
+                                    class="lg:w-1/2 max-md:w-full max-lg:w-full">Explication</label>
+                                <textarea type="text" placeholder="Explication " id="explication"
+                                    class="h-28 lg:w-1/2 max-md:w-full max-lg:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                    required></textarea>
                             </div>
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Points : </label>
-                                <input type="number" placeholder="Points" id="points" class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                <input type="number" placeholder="Points" id="points"
+                                    class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                    required>
                             </div>
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
-                                <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Temps du question : </label>
-                                <input type="time" placeholder="time" id="timeQuestion" class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                                <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Temps du question
+                                    : </label>
+                                <input type="time" placeholder="time" id="timeQuestion"
+                                    class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"
+                                    required>
                             </div>
                         </div>
 
@@ -427,31 +247,13 @@
 
         </div>
 
-    </section> -->
+    </section>
 
     <!-- ============================================================================================================================== -->
-    <!-- section 2 ============================================================================================================================== -->
-   
-    <!-- <section class="w-full h-[2vh]  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-10">
-
-        <div class="relative w-full h-screen overflow-hidden">
-            <img id="bg4" src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover ">
-
-            <div
-                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-
-
-            </div>
-        </div>
-
-    </section>
-    -->
     <!-- ============================================================================================================================== -->
     <!-- section Vrai/Faux ============================================================================================================================== -->
-    
-    <!-- <section class=" max-md:text-sm">
+
+    <section class=" max-md:text-sm">
 
         <div class="w-full  flex flex-col justify-center items-center gap-6 py-3">
             <div class=" ">
@@ -462,42 +264,48 @@
 
             <div class="w-full flex justify-center px-3 ">
 
-                <form action="" id="questionForm" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
+                <form action="" id="questionFormVF"
+                    class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
 
                     <div class="flex lg:flex-row gap-2 max-md:flex-col">
                         <div class="flex flex-col gap-2 p-2 lg:w-1/2 max-lg:w-1/2 max-md:w-full justify-center ">
                             <div class="flex lg:flex-row max-lg:flex-col gap-1 w-full max-md:flex-col ">
-                                <input type="hidden" id="id_quiz" value="1">
-                                <input type="hidden" id="typeQuestion" value="V/F"> 
+                                <input type="hidden" id="id_quizVF" value="1">
+                                <input type="hidden" id="typeQuestionVF" value="V/F">
                                 <label for="question" class="lg:w-1/2 max-lg:w-full max-md:w-full">Question : </label>
-                                <input type="text" id="question"  placeholder="Question"
+                                <input type="text" id="questionVF" placeholder="Question"
                                     class=" h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                             </div>
                             <div class="flex lg:flex-row max-lg:flex-col max-md:flex-col gap-2 w-full ">
                                 <h3 class="lg:w-1/2 max-lg:w-full max-md:w-full">La bonne réponse : </h3>
-                                <div class="flex flex-col lg:w-1/2 max-lg:w-full max-md:w-full max-md:items-center max-lg:items-center  gap-2">
-                                    <span><input type="checkbox" id="correct_option_1" class="">Vrai</span>
-                                    <span><input type="checkbox" id="correct_option_2" class="">Faux</span>
-                                    
+                                <div
+                                    class="flex flex-col lg:w-1/2 max-lg:w-full max-md:w-full max-md:items-center max-lg:items-center  gap-2">
+                                    <span><input type="checkbox" id="correct_option_V" class="">Vrai</span>
+                                    <span><input type="checkbox" id="correct_option_F" class="">Faux</span>
+
                                 </div>
-                                
+
 
                             </div>
                         </div>
 
-                        <div class="lg:w-1/2 max-lg:w-1/2 max-md:w-full  flex flex-col gap-2 border-l-2 max-md:border-none border-yellow-600 pl-2 ">
-                            
+                        <div
+                            class="lg:w-1/2 max-lg:w-1/2 max-md:w-full  flex flex-col gap-2 border-l-2 max-md:border-none border-yellow-600 pl-2 ">
+
                             <div class="flex w-full lg:flex-row max-lg:flex-col max-md:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full ">Explication</label>
-                                <textarea type="text" id="explication" placeholder="Explication " class="h-28 lg:w-1/2 max-md:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"></textarea>
+                                <textarea type="text" id="explicationVF" placeholder="Explication "
+                                    class="h-28 lg:w-1/2 max-md:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"></textarea>
                             </div>
                             <div class="flex w-full lg:flex-row max-lg:flex-col max-md:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full ">Points : </label>
-                                <input type="number" id="points" placeholder="Points" class="h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                <input type="number" id="pointsVF" placeholder="Points"
+                                    class="h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                             </div>
                             <div class="flex w-full lg:flex-row max-lg:flex-col max-md:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full ">Temps de question : </label>
-                                <input type="time" id="timeQuestion" placeholder="time" class="h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                <input type="time" id="timeQuestionVF" placeholder="time"
+                                    class="h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                             </div>
                         </div>
 
@@ -506,7 +314,7 @@
 
 
                     <div class="w-full h-10 flex flex-row justify-center pt-2 ">
-                        <button type="submit"
+                        <button type="submit" id="question_suivant"
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
                             suivant
                         </button>
@@ -518,31 +326,13 @@
 
         </div>
 
-    </section> -->
-    
+    </section>
+
     <!-- ============================================================================================================================== -->
-    <!-- section 2 ============================================================================================================================== -->
-    
-    <!-- <section class="w-full h-[2vh]  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-10">
-
-        <div class="relative w-full h-screen overflow-hidden">
-            <img id="bg5" src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover ">
-
-            <div
-                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-
-
-            </div>
-        </div>
-
-    </section> -->
-
     <!-- ============================================================================================================================== -->
     <!-- section textuel ============================================================================================================================== -->
-    
-    <!-- <section class="max-md:text-sm ">
+
+    <section class="max-md:text-sm ">
 
         <div class="w-full flex flex-col justify-center items-center gap-6 py-3">
             <div class=" ">
@@ -553,49 +343,65 @@
 
             <div class="w-full flex justify-center px-3 ">
 
-                <form action="" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
+                <form action="" id="questionFormText"
+                    class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
 
                     <div class="flex lg:flex-row max-md:flex-col gap-2">
                         <div class="flex flex-col gap-2 p-2 lg:w-1/2 max-lg:w-1/2 max-md:w-full justify-center ">
                             <div class="flex lg:flex-row max-lg:flex-col max-md:flex-col gap-1 w-full">
+                                <input type="hidden" id="id_quizText" value="1">
+                                <input type="hidden" id="typeQuestionText" value="Textuel">
                                 <label for="question" class="lg:w-1/2 max-md:w-full">Question : </label>
-                                <input type="text" placeholder="Question"
+                                <input type="text" placeholder="Question" id="questionText"
                                     class=" h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                             </div>
                             <div class="flex flex-col gap-2 w-full ">
                                 <div class="lg:flex max-lg:flex-col max-md:flex-col w-full">
-                                    <label for="option 1" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible 1 : </label>
-                                    <input type="text" placeholder="réponse possible 1"
+                                    <label for="option 1" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible
+                                        1 : </label>
+                                    <input type="text" placeholder="réponse possible 1" id="option1_Text"
                                         class=" h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                                 </div>
                                 <div class="lg:flex max-lg:flex-col max-md:flex-col w-full">
-                                    <label for="option 2" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible 2 : </label>
-                                    <input type="text" placeholder="réponse possible 2"
+                                    <label for="option 2" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible
+                                        2 : </label>
+                                    <input type="text" placeholder="réponse possible 2" id="option2_Text"
                                         class=" h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                                 </div>
                                 <div class="lg:flex max-lg:flex-col max-md:flex-col w-full">
-                                    <label for="option 3" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible 3 : </label>
-                                    <input type="text" placeholder="réponse possible 3"
+                                    <label for="option 3" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible
+                                        3 : </label>
+                                    <input type="text" placeholder="réponse possible 3" id="option3_Text"
                                         class=" h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                                 </div>
                                 <div class="lg:flex max-lg:flex-col max-md:flex-col w-full">
-                                    <label for="option 4" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible 4 : </label>
-                                    <input type="text" placeholder="réponse possible 4"
+                                    <label for="option 4" class="lg:w-1/2 max-lg:w-full max-md:w-full">Réponse possible
+                                        4 : </label>
+                                    <input type="text" placeholder="réponse possible 4" id="option4_Text"
                                         class=" h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="lg:w-1/2 max-lg:w-1/2 max-md:w-full flex flex-col gap-2 border-l-2 border-yellow-600 pl-2 ">
-                            
+                        <div
+                            class="lg:w-1/2 max-lg:w-1/2 max-md:w-full flex flex-col gap-2 border-l-2 border-yellow-600 pl-2 ">
+
                             <div class="flex lg:flex-row max-lg:flex-col max-md:flex-col ">
-                                <label for="explication" class="lg:w-1/2 max-lg:w-full max-md:w-full">Explication</label>
-                                <textarea type="text" placeholder="Explication " class="h-28 lg:w-1/2 max-lg:w-full max-md:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"></textarea>
+                                <label for="explication"
+                                    class="lg:w-1/2 max-lg:w-full max-md:w-full">Explication</label>
+                                <textarea type="text" placeholder="Explication " id="explicationText"
+                                    class="h-28 lg:w-1/2 max-lg:w-full max-md:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"></textarea>
                             </div>
                             <div class="flex lg:flex-row max-lg:flex-col max-md:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-lg:w-full max-md:w-full">Points : </label>
-                                <input type="number" placeholder="Points" class="h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                <input type="number" placeholder="Points" id="pointsText"
+                                    class="h-10 lg:w-1/2 max-lg:w-full max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                            </div>
+                            <div class="flex w-full lg:flex-row max-lg:flex-col max-md:flex-col ">
+                                <label for="explication" class="lg:w-1/2 max-md:w-full ">Temps de question : </label>
+                                <input type="time" id="timeQuestionText" placeholder="time"
+                                    class="h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                             </div>
                         </div>
 
@@ -604,7 +410,7 @@
 
 
                     <div class="w-full h-10 flex flex-row justify-center pt-2 ">
-                        <button
+                        <button type="submit" 
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
                             suivant
                         </button>
@@ -616,7 +422,8 @@
 
         </div>
 
-    </section>  -->
+    </section>
+    
     <!-- ============================================================================================================================== -->
     <!-- Footer ====================================================================================================================== -->
 
@@ -724,6 +531,8 @@
 <script src="js/addReadQuiz.js"></script>
 <script src="js/addQuestions.js"></script>
 <script src="js/afficherQuizs.js"></script>
+<script src="js/addVF.js"></script>
+<script src="js/addTextuel.js"></script>
 
 
 </html>
