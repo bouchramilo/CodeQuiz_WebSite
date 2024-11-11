@@ -1,0 +1,41 @@
+[
+  {
+    "id_quiz": 1,
+    "type": "qcm",
+    "questions": "ff",
+    "reponses": [
+      "cc",
+      "vv",
+      "qq",
+      "cc"
+    ],
+    "reponces_correct": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "Explication": "mù",
+    "points": 5
+  },
+  {
+    "id_quiz": 1,
+    "type": "QCM",
+    "questions": "ff",
+    "reponses": [
+      "dd",
+      "ff",
+      "fff",
+      "ff"
+    ],
+    "reponces_correct": [
+      false,
+      true,
+      false,
+      false
+    ],
+    "Explication": "gfhdj",
+    "points": 12,
+    "timeQuestion": "00:30"
+  }
+]

@@ -117,12 +117,12 @@
                     <h1 class="max-md:text-xs">Afficher des Questions</h1>
                 </button>
             </a>
-            <a href="admin.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="quiz_QCM.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
                     <h1 class="max-md:text-xs">Statistiques</h1>
                 </button>
             </a>
-            <a href="admin_2.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
+            <a href="quiz_textuel.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
                 <button>
                     <h1 class="max-md:text-xs">Gestion des utilisateurs</h1>
                 </button>
@@ -163,7 +163,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td class="border-2 border-black h-4 w-1/6 text-center">1</td>
                         <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
                         <td class="border-2 border-black h-4 w-1/6 text-center">Mathématique</td>
@@ -178,7 +178,7 @@
                         <td class="border-2 border-black h-4 w-1/6 text-center">active</td>
                         <td class="border-2 border-black h-4 w-1/6 text-center">25</td>
                         <td class="border-2 border-black h-4 w-1/6 text-center">5</td>
-                    </tr>
+                    </tr> -->
 
                 </tbody>
             </table>
@@ -223,80 +223,107 @@
             <!-- Création des quizs  -->
             <div class="w-full flex justify-center px-3 ">
 
-                <form action="" class=" bg-gray-200 w-[90%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md max-md:gap-6 max-md:text-sm">
+                <form id="quiz_form" action="" class=" bg-gray-200 w-[90%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md max-md:gap-6 max-md:text-sm">
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nom du quiz :</label>
-                        <input type="text" id="" name="" placeholder="Nom du quiz"
+                        <input type="text" id="nom" name="nom" placeholder="Nom du quiz"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Description :</label>
-                        <input type="text" id="" name="" placeholder="Description"
+                        <input type="text" id="description" name="description" placeholder="Description"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Catégorie :</label>
-                        <input type="text" id="" name="" placeholder="Catégorie"
+                        <input type="text" id="categorie" name="categorie" placeholder="Catégorie"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Niveau de difficulté :</label>
-                        <select name="filter1" id=""
+                        <select name="difficulte" id="difficulte"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                            <option value="">--Niveau de difficulté--</option>
-                            <option value="Difficile">Difficile</option>
-                            <option value="">Moyenne</option>
                             <option value="Facile">Facile</option>
+                            <option value="Moyenne">Moyenne</option>
+                            <option value="Difficile">Difficile</option>
+                        </select>
+                    </div>
+
+                    <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
+                        <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Status :</label>
+                        <select name="status" id="status"
+                            class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
                         </select>
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question :</label>
-                        <input type="number" id="" name="" placeholder="20"
+                        <input type="number" id="nbQuestions" name="nbQuestions" placeholder="20"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question QCM :</label>
-                        <input type="number" id="" name="" placeholder="5"
+                        <input type="number" id="nbrQestionsQCM" name="nbrQestionsQCM" placeholder="5"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question Vrai/Faux :</label>
-                        <input type="number" id="" name="" placeholder="5"
+                        <input type="number" id="nbrQestionsVF" name="nbrQestionsVF" placeholder="5"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Nombre de question Textuel :</label>
-                        <input type="number" id="" name="" placeholder="5"
+                        <input type="number" id="nbrQestionsTxt" name="nbrQestionsTxt" placeholder="5"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> Temps de quiz :</label>
-                        <input type="time" id="" name="" placeholder="15:00"
+                        <input type="time" id="TimeQuiz" name="TimeQuiz" placeholder="15:00"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex lg:flex-row  max-md:flex-col max-lg:flex-row ">
                         <label for="" class="lg:w-1/2 max-lg:w-1/2 max-md:w-full"> images de quiz :</label>
-                        <input type="file" id="" name=""
+                        <input type="file" id="imagesQuiz" name="imagesQuiz"
                             class="h-10 lg:w-1/2 max-md:w-full max-lg:w-1/2 border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
                     </div>
 
                     <div class="w-full lg:h-10 max-md:h-14 flex flex-row justify-center pt-2 ">
-                        <button
+                        <button type="submit"
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
                             GO
                         </button>
                     </div>
 
                 </form>
+
+
+                <!-- <form id="quiz_form">
+                    <input type="text" name="nom" placeholder="Nom du Quiz" required>
+                    <textarea name="description" placeholder="Description" required></textarea>
+                    <input type="text" name="categorie" placeholder="Catégorie" required>
+                    <input type="text" name="difficulte" placeholder="Difficulté" required>
+                    <input type="number" name="nbQuestions" placeholder="Nombre de questions" required>
+                    <input type="number" name="nbrQestionsQCM" placeholder="Nombre de questions QCM" required>
+                    <input type="number" name="nbrQestionsVF" placeholder="Nombre de questions V/F" required>
+                    <input type="number" name="nbrQestionsTxt" placeholder="Nombre de questions Texte" required>
+                    <input type="number" name="TimeQuiz" placeholder="Temps du quiz (en minutes)" required>
+                    <input type="file" name="imagesQuiz" placeholder="Image du quiz">
+                    <button type="submit">Créer le Quiz</button>
+                </form> -->
+                
+
+
+
 
             </div>
 
@@ -338,58 +365,63 @@
             <!-- Création des questions  -->
             <div class="w-full flex justify-center px-3 ">
 
-                <form action="" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
+                <form action="" id="questionForm" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
 
                     <div class="flex lg:flex-row gap-2 max-md:flex-col">
                         <div class="flex flex-col gap-2 p-2 w-1/2 max-md:w-full  justify-center  ">
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col  gap-1 w-full">
+                                <input type="hidden" id="id_quiz" value="1">
+                                <input type="hidden" id="typeQuestion" value="QCM"> 
                                 <label for="question" class="lg:w-1/2 max-md:w-full">Question : </label>
-                                <input type="text" placeholder="Question"
-                                    class=" h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                <input type="text" placeholder="Question" id="question"
+                                    class=" h-10 lg:w-1/2 max-md:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                             </div>
                             <div class="flex flex-col gap-2 w-full ">
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
                                     <label for="option 1" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 1 : </label>
-                                    <input type="text" placeholder="Option 1"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                    <input type="text" placeholder="Option 1" id="option_1"
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
                                     <label for="option 2" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 2 : </label>
-                                    <input type="text" placeholder="Option 2"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                    <input type="text" placeholder="Option 2" id="option_2"
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
                                     <label for="option 3" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 3 : </label>
-                                    <input type="text" placeholder="Option 3"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                    <input type="text" placeholder="Option 3" id="option_3"
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                                 </div>
                                 <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col w-full">
                                     <label for="option 4" class="lg:w-1/2 max-md:w-full max-lg:w-full">Option 4 : </label>
-                                    <input type="text" placeholder="Option 4"
-                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                    <input type="text" placeholder="Option 4" id="option_4"
+                                        class=" h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                                 </div>
 
                             </div>
                         </div>
-                        <!-- <hr class="border-yellow-600 border-2 w-full "> -->
 
                         <div class="w-1/2 max-md:w-full flex flex-col gap-2 border-l-2 max-md:border-none border-yellow-600 max-md:border-non pl-2 ">
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col">
                                 <h3 class="lg:w-1/2 max-md:w-full max-lg:w-full">Les bonnes réponses : </h3>
                                 <div class="flex flex-col lg:w-1/2 max-md:w-full max-lg:w-full items-center ">
-                                    <span><input type="radio" class="" >Option 1</span>
-                                    <span><input type="radio" class="">Option 2</span>
-                                    <span><input type="radio" class="">Option 3</span>
-                                    <span><input type="radio" class="">Option 4</span>
+                                    <span><input type="radio" class="" id="rep_option_1">Option 1</span>
+                                    <span><input type="radio" class="" id="rep_option_2">Option 2</span>
+                                    <span><input type="radio" class="" id="rep_option_3">Option 3</span>
+                                    <span><input type="radio" class="" id="rep_option_4">Option 4</span>
                                 </div>
                             </div>
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Explication</label>
-                                <textarea type="text" placeholder="Explication " class="h-28 lg:w-1/2 max-md:w-full max-lg:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4"></textarea>
+                                <textarea type="text" placeholder="Explication " id="explication" class="h-28 lg:w-1/2 max-md:w-full max-lg:w-full resize-none border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required></textarea>
                             </div>
                             <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
                                 <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Points : </label>
-                                <input type="number" placeholder="Points" class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
+                                <input type="number" placeholder="Points" id="points" class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
+                            </div>
+                            <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col ">
+                                <label for="explication" class="lg:w-1/2 max-md:w-full max-lg:w-full">Temps du question : </label>
+                                <input type="time" placeholder="time" id="timeQuestion" class="h-10 lg:w-1/2 max-md:w-full max-lg:w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4" required>
                             </div>
                         </div>
 
@@ -398,9 +430,9 @@
 
 
                     <div class="w-full h-10 flex flex-row justify-center pt-2 ">
-                        <button
+                        <button type="submit"
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
-                            GO
+                            suivant
                         </button>
                     </div>
 
@@ -487,7 +519,7 @@
                     <div class="w-full h-10 flex flex-row justify-center pt-2 ">
                         <button
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
-                            GO
+                            suivant
                         </button>
                     </div>
 
@@ -587,7 +619,7 @@
                     <div class="w-full h-10 flex flex-row justify-center pt-2 ">
                         <button
                             class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
-                            GO
+                            suivant
                         </button>
                     </div>
 
@@ -703,5 +735,8 @@
 </body>
 <script src="js/afficherMenu.js"></script>
 <script src="js/theme.js"></script>
+
+<script src="js/addReadQuiz.js"></script>
+<script src="js/addQuestions.js"></script>
 
 </html>
