@@ -94,7 +94,7 @@ app.post('/create-quiz', upload.single('imagesQuiz'), async (req, res) => {
         quizzes.push(newQuiz);
         await writeFile(quizzesFilePath, quizzes);
 
-        res.json({ message: 'Quiz créé avec succès' });
+        res.json({ message: 'Quiz créé avec succès', id: newId, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Erreur interne du serveur' });
@@ -158,6 +158,10 @@ app.listen(port, () => {
 
 // Définir le répertoire public pour les fichiers JSON
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve les fichiers JSON du dossier 'data'
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
 
 // Définir les routes pour récupérer les fichiers JSON
 app.get('/questions.json', (req, res) => {

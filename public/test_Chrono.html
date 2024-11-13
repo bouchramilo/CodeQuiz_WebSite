@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple de "timer" en JavaScript</title>
+</head>
+
+<body>
+    <!-- affichage en gros caractères -->
+    <p id="timeQuestion" style="margin: 100px; font-size: 4em;">0</p>
+
+    <script type="text/javascript">
+        function timeQuestion() {
+            // secondes écoulées
+            let secondes = 15;
+
+            // élément où afficher le décompte
+            let para = document.getElementById("timeQuestion");
+
+            // lance l'exécution de la fonction à toutes les secondes
+            let chrono = window.setInterval(tictictic, 1000);
+
+            // ---------------------------------------------------------
+            // Incrément le nombre de secondes, affiche cette quantité
+            // et arrête automatiquement après une minute.
+            // ---------------------------------------------------------
+            function tictictic() {
+                secondes--;
+                para.innerHTML = secondes;
+                if (secondes == 0) {
+                    // arrête l'exécution lancée par setInterval()
+                    window.clearTimeout(chrono);
+                }
+            }
+        }
+
+        timeQuestion();
+    </script>
+
+</body>
+
+</html>

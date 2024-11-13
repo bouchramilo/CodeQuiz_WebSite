@@ -2,25 +2,76 @@
   {
     "id_quiz": 1,
     "type": "V/F",
-    "questions": "jhjh",
+    "questions": "5 * 2 = 10",
     "reponces_correct": [
       true,
       false
     ],
-    "Explication": "gfgg",
-    "points": 5,
-    "timeQuestion": "05:00"
+    "Explication": "car 5 + 5 = 10",
+    "points": 2,
+    "timeQuestion": "10"
   },
   {
     "id_quiz": 1,
     "type": "V/F",
-    "questions": "vffv",
+    "questions": "6 * 5 = 36",
     "reponces_correct": [
-      true,
-      false
+      false,
+      true
+      
     ],
-    "Explication": "vffv",
-    "points": 13,
-    "timeQuestion": "13:00"
+    "Explication": "car 6 + 6 + 6 + 6 + 6 + 6 = 36",
+    "points": 1,
+    "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 1,
+    "type": "V/F",
+    "questions": "5 * 3 = 10",
+    "reponces_correct": [
+      false,
+      true
+    ],
+    "Explication": "car 5 * 3  = 15",
+    "points": 2,
+    "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 2,
+    "type": "V/F",
+    "questions": "6 * 4 = 36",
+    "reponces_correct": [
+      false,
+      true
+      
+    ],
+    "Explication": "car 6 + 6 + 6 + 6  = 24",
+    "points": 1,
+    "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 2,
+    "type": "V/F",
+    "questions": "5 * 3 = 10",
+    "reponces_correct": [
+      false,
+      true
+    ],
+    "Explication": "car 5 * 3 = 15",
+    "points": 2,
+    "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 2,
+    "type": "V/F",
+    "questions": "6 * 4 = 26",
+    "reponces_correct": [
+      false,
+      true
+      
+    ],
+    "Explication": "car 6 * 4 = 24",
+    "points": 1,
+    "timeQuestion": "10"
   }
 ]

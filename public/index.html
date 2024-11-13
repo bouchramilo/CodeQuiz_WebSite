@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/dark.css">
-    
+
 </head>
 
 <body class="">
@@ -19,8 +19,8 @@
         <nav class="flex items-center justify-between flex-wrap p-1 px-4 border-b-2 gap-4  ">
             <div class="flex items-center flex-no-shrink lg:ml-20">
                 <a href="index.html">
-                    <!-- <img src="images/icones/logo" alt="LOGO " class=""> -->
-                    <span class="font-bold text-xl hover:text-yellow-600">CodeQuiz</span>
+                    <img src="images/icones/logo.png" alt="LOGO " class="w-24">
+                    <!-- <span class="font-bold text-xl hover:text-yellow-600">CodeQuiz</span> -->
                 </a>
             </div>
             <div class="lg:hidden">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="lg:mr-20" id="theme">
-                    <button onclick="Theme()"  class="" >
+                    <button onclick="Theme()" class="">
                         <!-- <img src="images/icones/theme" alt="Theme"> -->
                         <svg class="text-yellow-600 w-10 h-10" fill="#ffb805" version="1.1" id="Capa_1"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -107,17 +107,21 @@
 
         <div class="relative w-full h-screen overflow-hidden">
             <!-- image de background -->
-            <img id="bg"  src="images/background_.jpg" alt="background home"
-                class="absolute inset-0 w-full h-full object-cover" >
+            <img id="bg" src="images/background_.jpg" alt="background home"
+                class="absolute inset-0 w-full h-full object-cover">
 
 
             <!-- Contenu au-dessus de la vidéo -->
             <div
                 class="relative z-10 flex flex-col gap-10 items-center justify-center h-full text-white bg-transparent bg-opacity-100">
-                <div class="flex justify-center items-center text-center ">
-                    <h1 class="lg:text-3xl text-black max-md:text-2xl md:text-2xl font-bold" style="font-family: 'Hanalei Fill' , cursive;">
-                        Laissez vous inspirer par des critiques et des recommandations personnalisées.
+                <div class="flex flex-col justify-center items-center text-center ">
+                    <h1 class="lg:text-3xl text-black max-md:text-2xl md:text-2xl font-bold"
+                        style="font-family: 'Hanalei Fill' , cursive;">
+                        Découvrez des quizzes interactifs pour tous les goûts !
                     </h1>
+                    <h4 class="lg:text-sm text-yellow-600 max-md:text-sm md:text-sm font-bold"
+                        style="font-family: 'Hanalei Fill' , cursive;">
+                        Un quiz interactif pour chaque passion : histoire, science, culture générale, et bien plus !                    </h4>
                 </div>
 
                 <div class="flex flex-row justify-center items-center gap-4  w-full">
@@ -135,7 +139,8 @@
 
     <section>
         <div class="border-4 border-yellow-600">
-            <form action="#" method="get" class="flex flex-row lg:gap-4 justify-between items-center px-20  max-md:flex-wrap max-md:justify-start max-md:gap-2 max-md:my-2 max-md:py-0 max-md:px-10 md:gap-2 md:my-2">
+            <form action="#" method="get"
+                class="flex flex-row lg:gap-4 justify-between items-center px-20  max-md:flex-wrap max-md:justify-start max-md:gap-2 max-md:my-2 max-md:py-0 max-md:px-10 md:gap-2 md:my-2">
                 <div class="lg:h-16 w-full flex items-center ">
                     <select name="filter1" id="difficulte"
                         class="h-10 w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
@@ -146,13 +151,14 @@
                     </select>
                 </div>
                 <div class="lg:h-16 w-full flex items-center ">
-                    <select name="filter1" id=""
+                    <select name="filter2" id="categorie"
                         class="h-10 w-[100%] border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                        <option value="">Type des questions</option>
-                        <option value="">a</option>
-                        <option value="">b</option>
-                        <option value="">c</option>
-                        <option value="">d</option>
+                        <option value="">Catégorie</option>
+                        <option value="Sciences">Sciences</option>
+                        <option value="Histoire">Histoire</option>
+                        <option value="Culture générale">Culture générale</option>
+                        <option value="Langue">Langue</option>
+                        <option value="Programmation">Programmation</option>
                     </select>
                 </div>
                 <div class="lg:h-16 w-full flex items-center ">
@@ -173,7 +179,7 @@
 
     <!-- ============================================================================================================================== -->
     <!-- section 2 ==================================================================================================================== -->
-<!-- page index.html -->
+    <!-- page index.html -->
     <section class="">
 
         <div class="w-full flex flex-col justify-center items-center gap-6 py-3">
@@ -184,11 +190,12 @@
             </div>
 
             <!-- cartes -->
-            <div id="cards" class="w-full lg:grid lg:grid-cols-3 justify-center gap-8 px-3 max-md:grid max-md:grid-cols-2 md:grid md:grid-cols-2   max-sm:grid max-sm:grid-cols-1">
+            <div id="cards"
+                class="w-full lg:grid lg:grid-cols-3 justify-center gap-8 px-3 max-md:grid max-md:grid-cols-2 md:grid md:grid-cols-2   max-sm:grid max-sm:grid-cols-1">
 
                 <!-- cart 1  -->
 
-                
+
 
 
             </div>
@@ -298,6 +305,16 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+        function storeQuizData(quizId) {
+            localStorage.setItem("IDquiz", quizId);
+            window.location.href = "quiz.html";
+        }
+
+    </script>
+
 
 </body>
 <script src="js/afficherMenu.js"></script>

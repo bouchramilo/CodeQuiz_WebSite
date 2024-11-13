@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CodeQuiz - Admin - Qestion</title>
+    <title>CodeQuiz - quiz</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
@@ -11,7 +11,7 @@
 
 </head>
 
-<body class=" flex flex-col gap-2">
+<body class="flex flex-col  ">
     <!-- ============================================================================================================================== -->
     <!-- Header ======================================================================================================================= -->
 
@@ -101,100 +101,15 @@
     </header>
 
     <!-- ============================================================================================================================== -->
-    <!-- section 1 ==================================================================================================================== -->
-    <section class=" h-16">
-        <div
-            class="w-full h-full lg:flex lg:flex-row max-lg:grid max-lg:grid-cols-4 justify-evenly items-center bg-yellow-600 gap-2 max-md:grid max-md:grid-cols-2 max-md:gap-1 max-md:p-1">
-            <a href="admin.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
-                <button>
-                    <h1 class="max-md:text-xs">Gestion des Quiz</h1>
-                </button>
-            </a>
-            <a href="admin_2.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
-                <button>
-                    
-                    <h1 class="max-md:text-xs">Afficher des Questions</h1>
-                </button>
-            </a>
-            <a href="admin.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
-                <button>
-                    <h1 class="max-md:text-xs">Statistiques</h1>
-                </button>
-            </a>
-            <a href="admin_2.html" class="flex justify-center items-center lg:w-1/6 h-4/5 text-center bg-white border-2 rounded-md border-blue-500 hover:border-white hover:bg-blue-500  max-md:h-full">
-                <button>
-                    <h1 class="max-md:text-xs">Gestion des utilisateurs</h1>
-                </button>
-            </a>
-        </div>
-    </section>
+
+
+    <div id="questionsForme" class="flex flex-col justify-center items-center  h-[650px]"></div>
+
 
     <!-- ============================================================================================================================== -->
-    <!-- section 1 ==================================================================================================================== -->
-
-    <section class="w-full h-max  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-2">
-
-
-        <div class="w-full">
-            <div class="relative w-full h-20 overflow-hidden">
-                <img id="bg" src="images/background_.jpg" alt="background home"
-                    class="absolute inset-0 w-full h-full object-cover ">
-
-                <div
-                    class="relative z-10 flex flex-col gap-10 items-center justify-center h-full bg-transparent bg-opacity-100">
-
-                    <h1 class="text-2xl max-md:text-xl max-md:text-center">Liste des Questions de tout les quizs :</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full flex flex-col items-center  ">
-
-            <table class="w-[85%] max-md:w-full max-sm:mx-2 max-sm:text-[12px] h-max border-2 border-red-800">
-                <thead>
-                    <tr class="bg-blue-500">
-                        <th class="border-2 border-black h-4 w-2/6">Question</th>
-                        <th class="border-2 border-black h-4 w-1/6">Le nom de quiz</th>
-                        <th class="border-2 border-black h-4 w-1/6">Type de question</th>
-                        <th class="border-2 border-black h-4 w-1/6">Points</th>
-                        <th class="border-2 border-black h-4 w-1/6">Temps</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                    
-                    <!-- <tr>
-                        <td class="border-2 border-black h-4 w-2/6 text-center">Question text ? Lorem ipsum dolor sit,
-                            amet consectetur adipisicing elit. Quod asperiores nisi vel, explicabo recusandae culpa
-                            praesentium veritatis voluptatibus velit eius dolore obcaecati ratione consequuntur sapiente
-                            natus error dolorem. Repudiandae, amet.</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">QCM</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">2 pts</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1 min</td>
-                    </tr>
-                    <tr>
-                        <td class="border-2 border-black h-4 w-2/6 text-center">Qestion text ?</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">SVT</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">Textuel</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">2 pts</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1 min</td>
-                    </tr> -->
-
-                </tbody>
-            </table>
-
-
-        </div>
-
-
-
-    </section>
-
-
-
     <!-- Footer ====================================================================================================================== -->
 
-    <footer class="bg-gray-200 border-t-2 ">
+    <footer class="bg-gray-200 border-t-2 mt-40 ">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-4">
             <div class="flex justify-center items-center ">
 
@@ -294,16 +209,11 @@
 
 
 
-    <script>
-       
-    </script>
-
-
+   
 
 </body>
 <script src="js/afficherMenu.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/afficherQuestions.js"></script>
-<!-- <script src="js/addQuestions.js"></script> -->
+<script src="js/QUIZ.js"></script>
 
 </html>

@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if( quiz.difficulte === "Facile" ){
                     quizCard.className = "w-full flex flex-col justify-center items-center gap-2 text-sm border-4 rounded-2xl p-2 border-gray-400";
                     quizCard.innerHTML = `
-                    <div class="w-full h-32 bg-gray-200 flex">
-                        <img src="${quiz.imagesQuiz}" alt="quizImg" class="h-full w-full object-cover rounded-t-2xl">
+                    <div class="w-full h-32  flex">
+                        <img src="images/background__.jpg" alt="quizImg" class="h-full w-full object-cover rounded-2xl">
                     </div>
                     <div>
                         <div class="flex gap-2">
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="difficulty">${quiz.difficulte}</p>
                         </div>
                     </div>
-                    <button class="bg-gray-400 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-gray-400">
+                    <button class="bg-gray-400 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-gray-400" onclick="storeQuizData(${quiz.id})">
                         GO
                     </button>
                 `;
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if( quiz.difficulte === "Moyenne" ){
                         quizCard.className = "w-full flex flex-col justify-center items-center gap-2 text-sm border-4 rounded-2xl p-2 border-blue-500";
                         quizCard.innerHTML = `
-                            <div class="w-full h-32 bg-gray-200 flex">
-                                <img src="${quiz.imagesQuiz}" alt="quizImg" class="h-full w-full object-cover rounded-t-2xl">
+                            <div class="w-full h-32  flex">
+                                <img src="images/background.jpg" alt="quizImg" class="h-full w-full object-cover rounded-2xl">
                             </div>
                             <div>
                                 <div class="flex gap-2">
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <p class="difficulty">${quiz.difficulte}</p>
                                 </div>
                             </div>
-                            <button class="bg-blue-500 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-blue-500">
+                            <button class="bg-blue-500 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-blue-500" onclick="storeQuizData(${quiz.id})">
                                 GO
                             </button>
                         `;
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     else {
                         quizCard.className = "w-full flex flex-col justify-center items-center gap-2 text-sm border-4 rounded-2xl p-2 border-yellow-600";
                         quizCard.innerHTML = `
-                            <div class="w-full h-32 bg-gray-200 flex">
-                                <img src="${quiz.imagesQuiz}" alt="quizImg" class="h-full w-full object-cover rounded-t-2xl">
+                            <div class="w-full h-32  flex">
+                                <img src="images/bgQuiz.jpg" alt="quizImg" class="h-full w-full object-cover rounded-2xl">
                             </div>
                             <div>
                                 <div class="flex gap-2">
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <p class="difficulty">${quiz.difficulte}</p>
                                 </div>
                             </div>
-                            <button class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600">
+                            <button class="bg-yellow-600 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-yellow-600" onclick="storeQuizData(${quiz.id})">
                                 GO
                             </button>
                         `;

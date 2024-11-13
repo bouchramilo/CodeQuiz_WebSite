@@ -15,16 +15,34 @@ searchInput.addEventListener("keyup", () => {
     });
 });
 
+// filter 1 input
 
 let filter1 = document.getElementById("difficulte");
     let quizsList_f1 = document.getElementById("cards");
 
-    // Applique le filtre lorsque la difficulté est sélectionnée
     filter1.addEventListener("change", () => {
         let query = filter1.value.toLowerCase();
 
         Array.from(quizsList_f1.children).forEach(quiz => {
-            let titleElement = quiz.querySelector('.difficulty'); // Assurez-vous d'avoir une classe "difficulty" sur les éléments affichant la difficulté
+            let titleElement = quiz.querySelector('.difficulty'); 
+            if (titleElement) {
+                let title = titleElement.textContent.toLowerCase();
+                quiz.style.display = title.includes(query) || query === "" ? "" : "none";
+            }
+        });
+    });
+
+
+// filter 2 input
+
+    let filter2 = document.getElementById("categorie");
+    let quizsList_f2 = document.getElementById("cards");
+
+    filter1.addEventListener("change", () => {
+        let query = filter2.value.toLowerCase();
+
+        Array.from(quizsList_f2.children).forEach(quiz => {
+            let titleElement = quiz.querySelector('.category'); 
             if (titleElement) {
                 let title = titleElement.textContent.toLowerCase();
                 quiz.style.display = title.includes(query) || query === "" ? "" : "none";

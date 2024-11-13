@@ -2,29 +2,29 @@
   {
     "id_quiz": 1,
     "type": "Textuel",
-    "questions": "44",
+    "questions": "5 * 4 = ?",
     "reponces_correct": [
-      "kkkk",
-      "kk",
-      "kk",
-      "kk"
+      "5 * 4 = 20",
+      "20",
+      "4 * 5 = 20",
+      "5*4=20"
     ],
-    "Explication": "kkkk444",
-    "points": 4,
-    "timeQuestion": "04:00"
+    "Explication": "5*4=20",
+    "points": 2,
+    "timeQuestion": "30"
   },
   {
     "id_quiz": 1,
     "type": "Textuel",
-    "questions": "text test",
+    "questions": "5 * 3 = ?",
     "reponces_correct": [
-      "text test",
-      "text test",
-      "text test",
-      "text test"
+      "5 * 3 = 15",
+      "3 * 5 = 15",
+      "15",
+      "5*3=15"
     ],
-    "Explication": "text test text test text test",
-    "points": 14,
-    "timeQuestion": "14:00"
+    "Explication": "5 * 3 = 15",
+    "points": 3,
+    "timeQuestion": "30"
   }
 ]
