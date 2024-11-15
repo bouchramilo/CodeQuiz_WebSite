@@ -7,23 +7,17 @@ const multer = require('multer');
 const app = express();
 const port = 3000;
 
-// Middleware pour parser les requêtes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// Middleware pour servir les fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configuration de multer pour les uploads
 const upload = multer({ dest: 'uploads/' });
 
-// Définition des chemins pour les fichiers
 const quizzesFilePath = path.join(__dirname, 'data', 'quizzes.json');
 const questionsFilePath = path.join(__dirname, 'data', 'questions.json');
 const questionsVFFilePath = path.join(__dirname, 'data', 'questionsVF.json');
 const questionsTextFilePath = path.join(__dirname, 'data', 'questionsText.json');
 
-// Fonction utilitaire pour lire un fichier JSON
 function readFile(filePath) {
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf8', (err, data) => {
@@ -38,7 +32,6 @@ function readFile(filePath) {
     });
 }
 
-// Fonction utilitaire pour écrire dans un fichier JSON
 function writeFile(filePath, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8', (err) => {
@@ -48,7 +41,6 @@ function writeFile(filePath, data) {
     });
 }
 
-// Fonction pour obtenir le prochain ID pour un quiz
 function getNextID() {
     return readFile(quizzesFilePath).then(quizzes => {
         const maxId = quizzes.reduce((max, quiz) => Math.max(max, quiz.id), 0);
@@ -56,7 +48,6 @@ function getNextID() {
     });
 }
 
-// Routes pour gérer les quiz
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
@@ -69,7 +60,14 @@ app.get('/quizzes', (req, res) => {
 
 app.post('/create-quiz', upload.single('imagesQuiz'), async (req, res) => {
     try {
-        const { nom, description, categorie, difficulte, status, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt, TimeQuiz } = req.body;
+        const { nom, description, categorie, difficulte, status, TimeQuiz } = req.body;
+
+        // Convertir les champs numériques en entier
+        const nbQuestions = parseInt(req.body.nbQuestions, 10);
+        const nbrQestionsQCM = parseInt(req.body.nbrQestionsQCM, 10);
+        const nbrQestionsVF = parseInt(req.body.nbrQestionsVF, 10);
+        const nbrQestionsTxt = parseInt(req.body.nbrQestionsTxt, 10);
+        
         const imagesQuiz = req.file ? path.join('uploads', req.file.filename) : ''; // Utilisation du chemin relatif
 
         const newId = await getNextID();
@@ -101,20 +99,19 @@ app.post('/create-quiz', upload.single('imagesQuiz'), async (req, res) => {
     }
 });
 
-// Routes pour gérer les questions
+
+
 app.get('/questions', (req, res) => {
     readFile(questionsFilePath)
         .then(questions => res.json(questions))
         .catch(err => res.status(500).send(err));
 });
 
-// Route pour ajouter des questions
 app.post('/add-question', (req, res) => {
     console.log("Requête reçue avec les données : ", req.body);
 
     const newQuestion = req.body;
 
-    // Vérifier le type de la question et définir le fichier approprié
     let filePath;
     if (newQuestion.type === "QCM") {
         filePath = path.join(__dirname, 'data', 'questions.json'); // Ou un autre fichier dédié aux QCM
@@ -126,7 +123,6 @@ app.post('/add-question', (req, res) => {
         return res.status(400).json({ message: "Type de question non pris en charge." });
     }
 
-    // Lire les questions existantes à partir du fichier
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) return res.status(500).json({ message: "Erreur de lecture du fichier." });
 
@@ -135,10 +131,8 @@ app.post('/add-question', (req, res) => {
             questions = JSON.parse(data); // Parser les données existantes si le fichier n'est pas vide
         }
 
-        // Ajouter la nouvelle question
         questions.push(newQuestion);
 
-        // Sauvegarder les questions mises à jour dans le fichier
         fs.writeFile(filePath, JSON.stringify(questions, null, 2), 'utf8', (err) => {
             if (err) return res.status(500).json({ message: "Erreur lors de l'enregistrement de la question." });
             
@@ -154,16 +148,9 @@ app.listen(port, () => {
 });
 
 
-
-
-// Définir le répertoire public pour les fichiers JSON
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Serve les fichiers JSON du dossier 'data'
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
 
-// Définir les routes pour récupérer les fichiers JSON
 app.get('/questions.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'data', 'questions.json'));
 });
@@ -173,3 +160,46 @@ app.get('/questionsVF.json', (req, res) => {
 app.get('/questionsText.json', (req, res) => {
     res.sendFile(path.join(__dirname, 'data', 'questionsText.json'));
 })
+
+
+
+// ===========================================================
+
+const paths = {
+    qcm: path.join(__dirname, "data/questions.json"),
+    vf: path.join(__dirname, "data/QuestionsVF.json"),
+    textuel: path.join(__dirname, "data/questionsText.json"),
+};
+
+app.post("/add-question/:type", (req, res) => {
+    const { type } = req.params;
+    const question = req.body;
+
+    if (!["qcm", "vf", "textuel"].includes(type)) {
+        return res.status(400).json({ error: "Type de question invalide." });
+    }
+
+    const filePath = paths[type];
+
+    fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: "Erreur lors de la lecture du fichier." });
+        }
+
+        let questions = [];
+        if (data.trim()) {
+            questions = JSON.parse(data);
+        }
+
+        questions.push(question);
+
+        fs.writeFile(filePath, JSON.stringify(questions, null, 2), (err) => {
+            if (err) {
+                return res.status(500).json({ error: "Erreur lors de l'écriture du fichier." });
+            }
+
+            res.status(200).json({ message: "Question ajoutée avec succès !" });
+        });
+    });
+});
+

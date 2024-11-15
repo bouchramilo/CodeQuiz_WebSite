@@ -1,6 +1,7 @@
 [
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "QCM",
     "questions": "5 * 5 = ?",
     "reponses": [
@@ -21,6 +22,7 @@
   },
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "QCM",
     "questions": "10 * 10 = ?",
     "reponses": [
@@ -41,6 +43,7 @@
   },
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "QCM",
     "questions": "5 * 6 = ?",
     "reponses": [
@@ -62,61 +65,18 @@
   {
     "id_quiz": 2,
     "type": "QCM",
-    "questions": "5 * 10 = ?",
+    "question": "1*1",
     "reponses": [
-      "52",
-      "50",
-      "10",
-      "55"
-    ],
-    "reponces_correct": [
-      null,
-      "50",
-      null,
-      null
-    ],
-    "Explication": "5 fois 10 = 50",
-    "points": 1,
-    "timeQuestion": "20"
-  },
-  {
-    "id_quiz": 2,
-    "type": "QCM",
-    "questions": "10 * 100 = ?",
-    "reponses": [
-      "52",
-      "55",
-      "10",
-      "1000"
-    ],
-    "reponces_correct": [
-      null,
-      null,
-      null,
-      "1000"
-    ],
-    "Explication": "10 fois 100 = 1000",
-    "points": 1,
-    "timeQuestion": "20"
-  },
-  {
-    "id_quiz": 3,
-    "type": "QCM",
-    "questions": "12 / 6 = ?",
-    "reponses": [
-      "52",
-      "25",
+      "1",
       "2",
-      "55"
+      "3",
+      "4"
     ],
     "reponces_correct": [
-      null,
-      null,
-      "2",
-      null
+      "1"
     ],
-    "Explication": "12 diviser par 6 = 2",
+    "explication": "1*1=1",
     "points": 1,
-    "timeQuestion": "20"
+    "timeQuestion": "10"
   }
 ]

@@ -38,11 +38,27 @@ let filter1 = document.getElementById("difficulte");
     let filter2 = document.getElementById("categorie");
     let quizsList_f2 = document.getElementById("cards");
 
-    filter1.addEventListener("change", () => {
+    filter2.addEventListener("change", () => {
         let query = filter2.value.toLowerCase();
 
         Array.from(quizsList_f2.children).forEach(quiz => {
             let titleElement = quiz.querySelector('.category'); 
+            if (titleElement) {
+                let title = titleElement.textContent.toLowerCase();
+                quiz.style.display = title.includes(query) || query === "" ? "" : "none";
+            }
+        });
+    });
+
+
+    let filter3 = document.getElementById("status");
+    let quizsList_f3 = document.getElementById("cards");
+
+    filter3.addEventListener("change", () => {
+        let query = filter3.value.toLowerCase();
+
+        Array.from(quizsList_f3.children).forEach(quiz => {
+            let titleElement = quiz.querySelector('.stts'); 
             if (titleElement) {
                 let title = titleElement.textContent.toLowerCase();
                 quiz.style.display = title.includes(query) || query === "" ? "" : "none";

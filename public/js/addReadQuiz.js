@@ -1,5 +1,5 @@
 document.getElementById('quiz_form').addEventListener('submit', function(e) {
-    e.preventDefault();  // Empêche l'envoi par défaut du formulaire
+    e.preventDefault(); 
 
     const formData = new FormData(this);
 
@@ -9,35 +9,27 @@ document.getElementById('quiz_form').addEventListener('submit', function(e) {
     })
     .then(response => {
         if (response.ok) {
-            return response.json();  // Retourner la réponse sous forme de JSON
+            return response.json();
         } else {
-            return Promise.reject('Erreur HTTP: ' + response.status);  // Capture l'erreur HTTP
+            return Promise.reject('Erreur HTTP: ' + response.status);
         }
     })
     .then(data => {
         alert('Quiz créé avec succès!');
-
+        
+        // alert(data.nom);
         // Stocker les informations dans le localStorage
+        // localStorage.setItem('NomQuiz', data.nom);
         localStorage.setItem('quizId', data.id);
         localStorage.setItem('nbQuestions', data.nbQuestions);
         localStorage.setItem('nbrQestionsQCM', data.nbrQestionsQCM);
         localStorage.setItem('nbrQestionsVF', data.nbrQestionsVF);
         localStorage.setItem('nbrQestionsTxt', data.nbrQestionsTxt);
 
-
-       console.log('quizId', data.id);
-       console.log('nbQuestions', data.nbQuestions);
-       console.log('nbrQestionsQCM', data.nbrQestionsQCM);
-       console.log('nbrQestionsVF', data.nbrQestionsVF);
-       console.log('nbrQestionsTxt', data.nbrQestionsTxt);
-
-
-
-        // Redirige vers la page d'ajout de questions
         window.location.href = `ajouterQuestions.html`;
     })
     .catch(error => {
         console.error('Erreur:', error);
-        alert('Erreur de serveur: ' + error);  // Affiche l'erreur
+        alert('Erreur de serveur: ' + error);
     });
 });

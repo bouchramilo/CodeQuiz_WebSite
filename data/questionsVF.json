@@ -1,6 +1,7 @@
 [
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "V/F",
     "questions": "5 * 2 = 10",
     "reponces_correct": [
@@ -13,12 +14,12 @@
   },
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "V/F",
     "questions": "6 * 5 = 36",
     "reponces_correct": [
       false,
       true
-      
     ],
     "Explication": "car 6 + 6 + 6 + 6 + 6 + 6 = 36",
     "points": 1,
@@ -26,6 +27,7 @@
   },
   {
     "id_quiz": 1,
+    "nom_quiz": "math",
     "type": "V/F",
     "questions": "5 * 3 = 10",
     "reponces_correct": [
@@ -39,39 +41,13 @@
   {
     "id_quiz": 2,
     "type": "V/F",
-    "questions": "6 * 4 = 36",
-    "reponces_correct": [
-      false,
-      true
-      
-    ],
-    "Explication": "car 6 + 6 + 6 + 6  = 24",
-    "points": 1,
-    "timeQuestion": "10"
-  },
-  {
-    "id_quiz": 2,
-    "type": "V/F",
-    "questions": "5 * 3 = 10",
-    "reponces_correct": [
-      false,
-      true
-    ],
-    "Explication": "car 5 * 3 = 15",
+    "question": "2*2=4",
+    "reponces_correct": {
+      "Vrai": true,
+      "Faux": false
+    },
+    "explication": "2*2=4",
     "points": 2,
-    "timeQuestion": "10"
-  },
-  {
-    "id_quiz": 2,
-    "type": "V/F",
-    "questions": "6 * 4 = 26",
-    "reponces_correct": [
-      false,
-      true
-      
-    ],
-    "Explication": "car 6 * 4 = 24",
-    "points": 1,
     "timeQuestion": "10"
   }
 ]

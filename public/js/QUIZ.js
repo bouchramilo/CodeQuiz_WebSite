@@ -37,37 +37,37 @@ function loadQuestions(quizId) {
       let score = 0;
       let correctAnswers = 0;
       let incorrectAnswers = 0;
-      let TimeTotal = 0 ;
-      
+      let TimeTotal = 0;
+
       function timeQuestion() {
-            // secondes écoulées
-            let secondes = 15;
+        // secondes écoulées
+        let secondes = 15;
 
-            // élément où afficher le décompte
-            let para = document.getElementById("timeQuestion");
+        // élément où afficher le décompte
+        let para = document.getElementById("timeQuestion");
 
-            // lance l'exécution de la fonction à toutes les secondes
-            let chrono = window.setInterval(tictictic, 1000);
+        // lance l'exécution de la fonction à toutes les secondes
+        let chrono = window.setInterval(tictictic, 1000);
 
-            // ---------------------------------------------------------
-            // Incrément le nombre de secondes, affiche cette quantité
-            // et arrête automatiquement après une minute.
-            // ---------------------------------------------------------
-            function tictictic() {
-                secondes--;
-                para.innerHTML = secondes;
-                if (secondes == 0) {
-                    // arrête l'exécution lancée par setInterval()
-                    window.clearTimeout(chrono);
-                }
-            }
+        // ---------------------------------------------------------
+        // Incrément le nombre de secondes, affiche cette quantité
+        // et arrête automatiquement après une minute.
+        // ---------------------------------------------------------
+        function tictictic() {
+          secondes--;
+          para.innerHTML = secondes;
+          if (secondes == 0) {
+            // arrête l'exécution lancée par setInterval()
+            window.clearTimeout(chrono);
+          }
         }
+      }
 
-        timeQuestion();
+      timeQuestion();
 
       function displayQuestion(index) {
         const questionContainer = document.getElementById("questionsForme");
-        questionContainer.innerHTML = ""; // Clear previous question
+        questionContainer.innerHTML = ""; 
 
         if (index >= questions.length) {
           questionContainer.innerHTML = "";
@@ -123,13 +123,17 @@ function loadQuestions(quizId) {
         );
 
         questionElement.innerHTML = `
-            <div class="bg-blue-500 h-[10%] grid lg:grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-2  border-2 rounded-md border-yellow-600">
-                  <div class=" flex justify-center items-center "><input type="range" min="0" max="100" value="${(100 * index) / questions.length}" disabled></div>
+            <div class="bg-transparent h-[10%] grid lg:grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-2  border-2 rounded-md border-yellow-600 shadow-gray-400 shadow-md">
+                  <div class=" flex justify-center items-center "><input type="range" min="0" max="100" value="${
+                    (100 * index) / questions.length
+                  }" class="w-64 h-2 bg-gray-300 rounded-lg cursor-pointer disabled:bg-gray-400" disabled></div>
                   <div class=" flex justify-center items-center ">${
                     index + 1
                   }/${questions.length}</div>
                   <div class=" flex justify-center items-center "><h3 class="score">Score : ${score}pts</h3></div>
-                  <div id="timeQuestion" class=" flex justify-center items-center ">${question.timeQuestion}</div>
+                  <div id="timeQuestion" class=" flex justify-center items-center ">${
+                    question.timeQuestion
+                  }</div>
             </div>
             <div class="bg-blue-500 h-[80%] border-2 rounded-md border-yellow-600">
                   <form action="quiz.html" class=" h-full flex flex-col gap-4 px-4 py-4">
@@ -147,16 +151,14 @@ function loadQuestions(quizId) {
                         </div>
                   </form>
             </div>
-            <div id="expl" class="explication bg-blue-500 h-[10%] border-2 rounded-md border-yellow-600 " style="display:none ;">
+            <div id="expl" class="explication bg-transparent h-[10%] border-2 rounded-md border-yellow-600 shadow-gray-400 shadow-lg " style="display:none ;">
                   <h1>Explication : ${question.Explication}</h1>
             </div>
         `;
-        
-        
+
         questionContainer.appendChild(questionElement);
         timeQuestion(question.timeQuestion);
 
-        // Handle answer selection
         document.querySelectorAll(".option-button").forEach((button) => {
           button.addEventListener("click", () => handleAnswerSelection(button));
         });
@@ -175,24 +177,22 @@ function loadQuestions(quizId) {
           });
       }
 
-
-
       function renderOptions(question) {
         if (question.type === "QCM") {
           return question.reponses
             .map(
               (answer) => `
-                  <button data-answer="${answer}" class="option-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/4">${answer}</button>
+                  <button data-answer="${answer}" class="option-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/4 hover:shadow-gray-700 hover:shadow-lg">${answer}</button>
               `
             )
             .join("");
         } else if (question.type === "V/F") {
           return `
-              <button type="button" class="vf-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/3" data-answer="Vrai">Vrai</button>
-              <button type="button" class="vf-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/3" data-answer="Faux">Faux</button>
+              <button type="button" class="vf-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/3 hover:shadow-gray-700 hover:shadow-lg" data-answer="Vrai">Vrai</button>
+              <button type="button" class="vf-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/3 hover:shadow-gray-700 hover:shadow-lg" data-answer="Faux">Faux</button>
           `;
         } else if (question.type === "Textuel") {
-          return `<input type="text" class="response-textarea bg-emerald-100 w-full border-2 resize-none rounded-md border-white hover:border-yellow-600 max-md:h-full">
+          return `<input type="text" class="response-textarea bg-emerald-100 w-full border-2 resize-none rounded-md border-white hover:border-yellow-600 max-md:h-full hover:shadow-gray-700 hover:shadow-lg">
                 <div class="suggestions-container"></div>`;
         }
       }
@@ -210,60 +210,87 @@ function loadQuestions(quizId) {
 
           textarea.style.backgroundColor = isCorrect ? "green" : "red";
           showExplication();
-          isCorrect ? updateScores(true, question.points || 1) : updateScores(false, question.points || 1);
-          ;
+          isCorrect
+            ? updateScores(true, question.points || 1)
+            : updateScores(false, question.points || 1);
         });
       }
-      
 
       function handleAnswerSelection(button) {
         const question = questions[currentQuestionIndex];
         const correctAnswers = question.reponces_correct;
         const questionType = question.type;
-
+    
         if (questionType === "Textuel") {
-          handleTextualInput();
+            handleTextualInput();
         } else {
-          // Existing logic for QCM and V/F types
-          const selectedAnswer = button?.dataset.answer;
-          if (selectedAnswer) {
-            disableInputs(questionType);
-            let isCorrect = false;
-
-            if (questionType === "QCM") {
-              isCorrect = correctAnswers.includes(selectedAnswer);
-            } else if (questionType === "V/F") {
-              isCorrect =
-                (selectedAnswer === "Vrai" && correctAnswers[0] === true) ||
-                (selectedAnswer === "Faux" && correctAnswers[1] === true);
+            const selectedAnswer = button?.dataset.answer;
+            if (selectedAnswer) {
+                disableInputs(questionType);
+                let isCorrect = false;
+    
+                if (questionType === "QCM") {
+                    isCorrect = correctAnswers.includes(selectedAnswer);
+                } else if (questionType === "V/F") {
+                    isCorrect =
+                        (selectedAnswer === "Vrai" && correctAnswers[0] === true) ||
+                        (selectedAnswer === "Faux" && correctAnswers[1] === true);
+                }
+    
+                applyVisualFeedback(button, isCorrect, questionType, correctAnswers);
+    
+                showExplication();
+                updateScores(isCorrect, question.points || 1);
             }
-
-            applyVisualFeedback(
-              button,
-              isCorrect,
-              questionType,
-              correctAnswers
-            );
-
-            showExplication();
-            updateScores(isCorrect, question.points || 1);
-
-          } else {
-            // If no answer is selected, set the background to gray
-            if (questionType === "QCM") {
-              const option = document.querySelectorAll(".option-button");
-              if (option) {
-                option.style.backgroundColor = "gray"; // Neutral gray feedback for no input
-              }
-            } else {
-              // For QCM and V/F types, set the button background to gray if no selection is made
-              button.style.backgroundColor = "gray";
-            }
-          }
         }
-      }
-
-      // Show explanation after answering
+    }
+    
+    function applyVisualFeedback(button, isCorrect, questionType, correctAnswers) {
+        const options = document.querySelectorAll(
+            questionType === "V/F" ? ".vf-button" : ".option-button"
+        );
+    
+        // Parcourir toutes les options pour appliquer le style approprié
+        options.forEach((option) => {
+            const answer = option.dataset.answer;
+    
+            if (questionType === "QCM") {
+                if (correctAnswers.includes(answer)) {
+                    // Bonne réponse en vert
+                    option.style.backgroundColor = "green";
+                } else if (button.dataset.answer === answer && !isCorrect) {
+                    // Réponse incorrecte sélectionnée en rouge
+                    option.style.backgroundColor = "red";
+                } else {
+                    // Options non sélectionnées en gris
+                    option.style.backgroundColor = "gray";
+                }
+            } else if (questionType === "V/F") {
+                if (correctAnswers[0] && answer === "Vrai") {
+                    option.style.backgroundColor = "green"; // Bonne réponse (Vrai)
+                } else if (correctAnswers[1] && answer === "Faux") {
+                    option.style.backgroundColor = "green"; // Bonne réponse (Faux)
+                } else if (button.dataset.answer === answer && !isCorrect) {
+                    option.style.backgroundColor = "red"; // Mauvaise réponse sélectionnée
+                } else {
+                    option.style.backgroundColor = "gray"; // Non sélectionnée
+                }
+            }
+        });
+    }
+    
+    function showExplication() {
+        const explanationElement = document.getElementById("expl");
+        if (explanationElement) {
+            explanationElement.style.display = "block";
+        }
+    
+        const btnNext = document.getElementById("nextButton");
+        if (btnNext) {
+            btnNext.style.display = "block";
+        }
+    }
+    
       function showExplication() {
         const explanationElement = document.getElementById("expl");
         if (explanationElement) {
@@ -276,7 +303,6 @@ function loadQuestions(quizId) {
         }
       }
 
-      // Fonction pour désactiver les entrées selon le type de question
       function disableInputs(questionType) {
         document
           .querySelectorAll(".option-button, .vf-button")
@@ -286,69 +312,32 @@ function loadQuestions(quizId) {
         }
       }
 
-      // Fonction pour appliquer le feedback visuel
-      function applyVisualFeedback(
-        button,
-        isCorrect,
-        questionType,
-        correctAnswers
-      ) {
-        if (questionType === "Textuel") {
-          document.querySelector(".response-textarea").style.borderColor =
-            isCorrect ? "green" : "red";
-        } else {
-          button.style.backgroundColor = isCorrect ? "green" : "red";
-          if (!isCorrect) highlightCorrectAnswers(questionType, correctAnswers);
-        }
-      }
-
-      // Fonction pour mettre en évidence les réponses correctes
-      function highlightCorrectAnswers(questionType, correctAnswers) {
-        if (questionType === "V/F") {
-          document.querySelectorAll(".vf-button").forEach((btn) => {
-            if (
-              (btn.dataset.answer === "Vrai" && correctAnswers[0] === true) ||
-              (btn.dataset.answer === "Faux" && correctAnswers[1] === true)
-            ) {
-              btn.style.backgroundColor = "green";
-            }
-          });
-        } else if (questionType === "QCM") {
-          document.querySelectorAll(".option-button").forEach((btn) => {
-            if (correctAnswers.includes(btn.dataset.answer)) {
-              btn.style.backgroundColor = "green";
-            }
-          });
-        }
-      }
-
-      // Fonction pour mettre à jour les scores
       function updateScores(isCorrect, points) {
-        TimeTotal += parseInt(document.getElementById("timeQuestion").textContent);     
+        TimeTotal += parseInt(
+          document.getElementById("timeQuestion").textContent
+        );
         score += isCorrect ? points : 0;
         correctAnswers += isCorrect ? 1 : 0;
         incorrectAnswers += isCorrect ? 0 : 1;
       }
 
       function timeQuestion(timeQuestion) {
-            let secondes = timeQuestion || 10; 
-            let para = document.getElementById("timeQuestion");
-        
-            let chrono = window.setInterval(tictictic, 1000);
-        
-            function tictictic() {
+        let secondes = timeQuestion || 10;
+        let para = document.getElementById("timeQuestion");
 
-                if (secondes <= 0) {
-                    window.clearInterval(chrono);
-                    para.textContent = 0; 
-                } else {
-                    para.textContent = secondes ; 
-                    secondes--;
-                }
-                para.appendChild
-            }
+        let chrono = window.setInterval(tictictic, 1000);
+
+        function tictictic() {
+          if (secondes <= 0) {
+            window.clearInterval(chrono);
+            para.textContent = 0;
+          } else {
+            para.textContent = secondes;
+            secondes--;
+          }
+          para.appendChild;
         }
-        
+      }
 
       function IMGtypeQuestion(question) {
         if (question.type === "QCM") {
