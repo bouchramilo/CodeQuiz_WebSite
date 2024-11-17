@@ -31,6 +31,7 @@
   },
   {
     "id_quiz": 2,
+    "nom_quiz": "math basics",
     "type": "Textuel",
     "questions": "5*9",
     "reponces_correct": [
@@ -45,6 +46,7 @@
   },
   {
     "id_quiz": 3,
+    "nom_quiz": "francais",
     "type": "Textuel",
     "questions": "Citez un synonyme de content.",
     "reponces_correct": [
@@ -59,6 +61,7 @@
   },
   {
     "id_quiz": 3,
+    "nom_quiz": "francais",
     "type": "Textuel",
     "questions": "Comment dit-on thank you en français ?",
     "reponces_correct": [
@@ -73,6 +76,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "Textuel",
     "questions": "Expliquez ce qu'est une boucle for en JavaScript et donnez un exemple.",
     "reponces_correct": [
@@ -87,6 +91,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "Textuel",
     "questions": "Quelle est la différence entre == et === en JavaScript ?",
     "reponces_correct": [
@@ -101,6 +106,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "Textuel",
     "questions": "Décrivez le concept de \"pointeur\" en C et donnez un exemple d'utilisation.",
     "reponces_correct": [

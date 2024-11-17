@@ -92,7 +92,7 @@ app.post('/create-quiz', upload.single('imagesQuiz'), async (req, res) => {
         quizzes.push(newQuiz);
         await writeFile(quizzesFilePath, quizzes);
 
-        res.json({ message: 'Quiz créé avec succès', id: newId, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt });
+        res.json({ message: 'Quiz créé avec succès', id: newId, nom, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Erreur interne du serveur' });

@@ -64,6 +64,7 @@
   },
   {
     "id_quiz": 2,
+    "nom_quiz": "math basics",
     "type": "QCM",
     "questions": "1*1",
     "reponses": [
@@ -81,6 +82,7 @@
   },
   {
     "id_quiz": 3,
+    "nom_quiz": "francais",
     "type": "QCM",
     "questions": "Quel est l'article défini pour un mot féminin singulier en français ?",
     "reponses": [
@@ -98,6 +100,7 @@
   },
   {
     "id_quiz": 3,
+    "nom_quiz": "francais",
     "type": "QCM",
     "questions": "Quel est l'article défini pour un mot masculin singulier en français ?",
     "reponses": [
@@ -115,6 +118,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "QCM",
     "questions": "Quel est le résultat de l'expression suivante en JavaScript : 2 + '2' ?",
     "reponses": [
@@ -132,6 +136,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "QCM",
     "questions": "En Python, quelle est la fonction qui permet de lire un fichier ?",
     "reponses": [
@@ -149,6 +154,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "QCM",
     "questions": "Dans quel langage de programmation la syntaxe suivante est-elle valide : let x = 10; ?",
     "reponses": [
@@ -166,6 +172,7 @@
   },
   {
     "id_quiz": 4,
+    "nom_quiz": "Programmation",
     "type": "QCM",
     "questions": "le syntaxe de do-while en C ?",
     "reponses": [
@@ -178,6 +185,22 @@
       "do{...}while(condition);"
     ],
     "Explication": "do{\n//instructions ;\n}while(condition);",
+    "points": 3,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 6,
+    "nom_quiz": "Prograaaammmm",
+    "type": "QCM",
+    "questions": "azertyuioppyt",
+    "reponses": [
+      "do{...}while(condition)",
+      "do{...}while(condition);",
+      "do(condition)while{};",
+      "do(condition)while{}"
+    ],
+    "reponces_correct": [],
+    "Explication": "hjk",
     "points": 3,
     "timeQuestion": "15"
   }

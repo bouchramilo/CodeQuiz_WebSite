@@ -18,7 +18,7 @@ function loadQuestions() {
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td class="border-2 border-black h-12 text-center">${question.questions}</td>
-                        <td class="border-2 border-black h-12 text-center">${question.id_quiz}</td>
+                        <td class="border-2 border-black h-12 text-center">${question.nom_quiz}</td>
                         <td class="border-2 border-black h-12 text-center">${question.type}</td>
                         <td class="border-2 border-black h-12 text-center">${question.points}</td>
                         <td class="border-2 border-black h-12 text-center">${question.timeQuestion} s</td>

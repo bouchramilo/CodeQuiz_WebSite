@@ -1,6 +1,7 @@
 
 window.addEventListener("DOMContentLoaded", function () {
-    // const nomQuiz = JSON.parse(localStorage.getItem('NomQuiz'));
+    const nomQuiz = JSON.parse(localStorage.getItem('NomQuiz'));
+    // alert(nomQuiz);
     const id = JSON.parse(localStorage.getItem('quizId'));
     const nbQuestions = JSON.parse(localStorage.getItem('nbQuestions'));
     const nbrQestionsQCM = JSON.parse(localStorage.getItem('nbrQestionsQCM'));
@@ -8,14 +9,15 @@ window.addEventListener("DOMContentLoaded", function () {
     const nbrQestionsTxt = JSON.parse(localStorage.getItem('nbrQestionsTxt'));
 
     if (id) {
-        showFormsQuestions(id,   nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt);//nomQuiz,
+        showFormsQuestions(id, nomQuiz,   nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt);//nomQuiz,
     } else {
         console.error("Quiz ID not found in localStorage.");
     }
 });
 
-function showFormsQuestions(id, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt) {// nomQuiz,
+function showFormsQuestions(id, nom_Quiz, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQestionsTxt) {// nomQuiz,
     let currentQuestionIndex = 0;
+    // alert("nomQuiz : "+ nom_Quiz);
 
     function displayQuestion(index) {
         const formeContainer = document.getElementById("AddquestionsForme");
@@ -51,11 +53,11 @@ function showFormsQuestions(id, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQ
 
         let formHTML = "";
         if (index < nbrQestionsQCM) {
-            formHTML = createQCMForm(id, index);//nomQuiz,
+            formHTML = createQCMForm(id, nom_Quiz, index);//nomQuiz,
         } else if (index < nbrQestionsQCM + nbrQestionsVF) {
-            formHTML = createVFForm(id, index);//nomQuiz,
+            formHTML = createVFForm(id, nom_Quiz, index);//nomQuiz,
         } else {
-            formHTML = createTextForm(id, index);//nomQuiz,
+            formHTML = createTextForm(id, nom_Quiz, index);//nomQuiz,
         }
 
         formeContainer.innerHTML = formHTML;
@@ -81,7 +83,7 @@ function showFormsQuestions(id, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQ
     displayQuestion(currentQuestionIndex);
 }
 
-function createQCMForm(id, index) {//nomQuiz, 
+function createQCMForm(id, nomQuiz, index) {//nomQuiz, 
     return `
         <form action="" id="questionForm" class="bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
                              <h1>Question ${index + 1} : QCM</h1>
@@ -89,6 +91,8 @@ function createQCMForm(id, index) {//nomQuiz,
                                  <div class="flex flex-col gap-2 p-2 w-1/2 max-md:w-full  justify-center  ">
                                      <div class="flex lg:flex-row max-md:flex-col max-lg:flex-col  gap-1 w-full">
                                          <input type="hidden" id="id_quiz" value="${id}">
+                                         <input type="hidden" id="nom_quiz" value="${nomQuiz}">
+
                                          <input type="hidden" id="typeQuestion" value="QCM">
                                          <label for="question" class="lg:w-1/2 max-md:w-full">Question : </label>
                                          <input type="text" placeholder="Question" id="question"
@@ -171,7 +175,7 @@ function createQCMForm(id, index) {//nomQuiz,
     `;
 }
 
-function createVFForm(id, index) {//nomQuiz,
+function createVFForm(id, nomQuiz, index) {//nomQuiz,
     return `
         <form action="" id="questionFormVF" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md h-[70%]">
                              <h1>Question ${index + 1} : V/F</h1>
@@ -179,7 +183,7 @@ function createVFForm(id, index) {//nomQuiz,
                                  <div class="flex flex-col gap-2 p-2 lg:w-1/2 max-lg:w-1/2 max-md:w-full justify-center ">
                                      <div class="flex lg:flex-row max-lg:flex-col gap-1 w-full max-md:flex-col ">
                                          <input type="hidden" id="id_quizVF" value="${id}">
-
+                                         <input type="hidden" id="nom_quiz" value="${nomQuiz}">
                                          <input type="hidden" id="typeQuestionVF" value="V/F">
                                          <label for="question" class="lg:w-1/2 max-lg:w-full max-md:w-full">Question : </label>
                                          <input type="text" id="questionVF" placeholder="Question"
@@ -233,7 +237,7 @@ function createVFForm(id, index) {//nomQuiz,
     `;
 }
 //  <input type="hidden" id="nom_quiz" value="${nomQuiz}">
-function createTextForm(id, index) {//nomQuiz,
+function createTextForm(id,nomQuiz, index) {//nomQuiz,
     return `
          <form action="" id="questionFormText"
                                      class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md h-[70%]">
@@ -244,7 +248,7 @@ function createTextForm(id, index) {//nomQuiz,
                                          <div class="flex flex-col gap-2 p-2 lg:w-1/2 max-lg:w-1/2 max-md:w-full justify-center ">
                                              <div class="flex lg:flex-row max-lg:flex-col max-md:flex-col gap-1 w-full">
                                                  <input type="hidden" id="id_quizText" value="${id}">
-                                                
+                                                 <input type="hidden" id="nom_quiz" value="${nomQuiz}">                                                
 
                                                  <input type="hidden" id="typeQuestionText" value="Textuel">
                                                  <label for="question" class="lg:w-1/2 max-md:w-full">Question : </label>
@@ -320,7 +324,7 @@ function createTextForm(id, index) {//nomQuiz,
 async function setQuestionQCM() {
     try {
         const id_quiz = document.getElementById('id_quiz').value;
-        // const nom_quiz = document.getElementById('nom_quiz').value;
+        const nom_quiz = document.getElementById('nom_quiz').value;
         const typeQuestion = document.getElementById('typeQuestion').value;
         const question = document.getElementById('question').value;
         const option_1 = document.getElementById('option_1').value;
@@ -348,7 +352,7 @@ async function setQuestionQCM() {
 
         const questionData = {
             id_quiz: parseInt(id_quiz),
-            // nom_quiz: nom_quiz,
+            nom_quiz: nom_quiz,
             type: typeQuestion,
             questions: question,
             reponses: options,
