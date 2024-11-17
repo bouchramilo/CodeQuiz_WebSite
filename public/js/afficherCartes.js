@@ -16,10 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="images/background__.jpg" alt="quizImg" class="h-full w-full object-cover rounded-2xl">
                     </div>
                     <div>
-                        <div class=" gap-2 hidden">
-                            <h3>Titre de Quiz :</h3>
-                            <p class="stts">${quiz.nom}</p>
+                        <div class="gap-2 hidden">
+                            <h3>Status :</h3>
+                            <p class="stts">${quiz.status}</p>
                         </div>
+                        <div class="flex gap-2">
+                                    <h3>Titre de Quiz :</h3>
+                                    <h4>${quiz.nom}</h4>
+                                </div>
                         <div class="flex gap-2">
                             <h3>Nombre de Questions :</h3>
                             <p>${quiz.nbQuestions}</p>

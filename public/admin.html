@@ -130,53 +130,7 @@
         </div>
     </section>
 
-
-        <!-- ============================================================================================================================== -->
-    <!-- section Filtrage ==================================================================================================================== -->
-
-    <section>
-        <div class="border-4 border-yellow-600">
-            <form action="#" method="get"
-                class="flex flex-row lg:gap-4 justify-between items-center px-20  max-md:flex-wrap max-md:justify-start max-md:gap-2 max-md:my-2 max-md:py-0 max-md:px-10 md:gap-2 md:my-2">
-                <div class="lg:h-16 w-full flex items-center ">
-                    <select name="filter1" id="difficulte"
-                        class="h-10 w-full border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                        <option value="">Niveau de difficulté</option>
-                        <option value="Difficile">Difficile</option>
-                        <option value="Moyenne">Moyenne</option>
-                        <option value="Facile">Facile</option>
-                    </select>
-                </div>
-                <div class="lg:h-16 w-full flex items-center ">
-                    <select name="filter2" id="categorie"
-                        class="h-10 w-[100%] border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                        <option value="">Catégorie</option>
-                        <option value="Sciences">Sciences</option>
-                        <option value="Histoire">Histoire</option>
-                        <option value="Culture générale">Culture générale</option>
-                        <option value="Langue">Langue</option>
-                        <option value="Programmation">Programmation</option>
-                    </select>
-                </div>
-                <div class="lg:h-16 w-full flex items-center ">
-                    <select name="filter1" id=""
-                        class="h-10 w-[100%]  border-2 rounded-md border-blue-500 focus:border-yellow-600 focus:border-4">
-                        <option value="">Quiz associé</option>
-                        <option value="">e</option>
-                        <option value="">f</option>
-                        <option value="">g</option>
-                        <option value="">h</option>
-                    </select>
-                </div>
-            </form>
-        </div>
-
-    </section>
-
-
     <!-- ============================================================================================================================== -->
-    
-
     <!-- ============================================================================================================================== -->
     <!-- section tableau_quizs ==================================================================================================================== -->
 
@@ -198,34 +152,20 @@
 
         <div class="w-full flex flex-col items-center  ">
 
-            <table class="w-[85%] max-md:w-full max-sm:mx-2 max-sm:text-[12px] h-max border-2 border-red-800">
+            <table class="w-[85%] max-md:w-full max-sm:mx-2 max-sm:text-[10px] h-max border-2 border-red-800">
                 <thead>
                     <tr class="bg-blue-500">
-                        <th class="border-2 border-black h-4 w-1/6">ID de quiz</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nom de quiz</th>
-                        <th class="border-2 border-black h-4 w-1/6">Catégorie</th>
-                        <th class="border-2 border-black h-4 w-1/6">Statue</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nombre de questions</th>
-                        <th class="border-2 border-black h-4 w-1/6">Nombre de participant</th>
+                        <th class="border-2 border-black h-12 w-[10%]">ID de quiz</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Nom de quiz</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Difficulté</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Catégorie</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Statue</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Nombre de questions</th>
+                        <th class="border-2 border-black h-12 w-[10%]">Nombre de participant</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">Mathématique</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">active</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">25</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">5</td>
-                    </tr>
-                    <tr>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">1</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">math basic</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">Mathématique</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">active</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">25</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">5</td>
-                    </tr> -->
+                <tbody >
+                    
 
                 </tbody>
             </table>
@@ -263,7 +203,7 @@
         <div class=" w-full flex flex-col justify-center items-center gap-6 py-3">
             <div class=" ">
                 <h1 class="text-2xl max-md:text-xl ">
-                    Creer d'un quiz:
+                    Créer d'un quiz:
                 </h1>
             </div>
 
@@ -479,6 +419,8 @@
             </div>
         </div>
     </footer>
+
+  
 
 </body>
 <script src="js/afficherMenu.js"></script>

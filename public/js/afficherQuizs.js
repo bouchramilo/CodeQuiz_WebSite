@@ -11,12 +11,13 @@
                     // Crée une nouvelle ligne pour chaque quiz
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.id}</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.nom}</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.categorie}</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.status}</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.nbQuestions}</td>
-                        <td class="border-2 border-black h-4 w-1/6 text-center">${quiz.participants}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center">${quiz.id}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center">${quiz.nom}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center" id="difficulty">${quiz.difficulte}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center" id="category">${quiz.categorie}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center" id="stts">${quiz.status}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center">${quiz.nbQuestions}</td>
+                        <td class="border-2 border-black h-12 w-[10%] text-center">${quiz.participants}</td>
                     `;
                     tbody.appendChild(row);  // Ajoute la ligne au tableau
                 });

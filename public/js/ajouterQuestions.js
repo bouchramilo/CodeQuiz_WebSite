@@ -51,11 +51,11 @@ function showFormsQuestions(id, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQ
 
         let formHTML = "";
         if (index < nbrQestionsQCM) {
-            formHTML = createQCMForm(id,  index);//nomQuiz,
+            formHTML = createQCMForm(id, index);//nomQuiz,
         } else if (index < nbrQestionsQCM + nbrQestionsVF) {
-            formHTML = createVFForm(id,  index);//nomQuiz,
+            formHTML = createVFForm(id, index);//nomQuiz,
         } else {
-            formHTML = createTextForm(id,  index);//nomQuiz,
+            formHTML = createTextForm(id, index);//nomQuiz,
         }
 
         formeContainer.innerHTML = formHTML;
@@ -83,7 +83,7 @@ function showFormsQuestions(id, nbQuestions, nbrQestionsQCM, nbrQestionsVF, nbrQ
 
 function createQCMForm(id, index) {//nomQuiz, 
     return `
-        <form action="" id="questionForm" class="bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md h-[70%]">
+        <form action="" id="questionForm" class="bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md ">
                              <h1>Question ${index + 1} : QCM</h1>
                              <div class="flex lg:flex-row gap-2 max-md:flex-col">
                                  <div class="flex flex-col gap-2 p-2 w-1/2 max-md:w-full  justify-center  ">
@@ -171,7 +171,7 @@ function createQCMForm(id, index) {//nomQuiz,
     `;
 }
 
-function createVFForm(id,  index) {//nomQuiz,
+function createVFForm(id, index) {//nomQuiz,
     return `
         <form action="" id="questionFormVF" class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md h-[70%]">
                              <h1>Question ${index + 1} : V/F</h1>
@@ -233,7 +233,7 @@ function createVFForm(id,  index) {//nomQuiz,
     `;
 }
 //  <input type="hidden" id="nom_quiz" value="${nomQuiz}">
-function createTextForm(id,  index) {//nomQuiz,
+function createTextForm(id, index) {//nomQuiz,
     return `
          <form action="" id="questionFormText"
                                      class=" bg-gray-200 lg:w-[90%] max-lg:w-[95%] max-md:w-full flex flex-col gap-2 p-2 border-2 rounded-md h-[70%]">
@@ -350,10 +350,10 @@ async function setQuestionQCM() {
             id_quiz: parseInt(id_quiz),
             // nom_quiz: nom_quiz,
             type: typeQuestion,
-            question: question,
+            questions: question,
             reponses: options,
             reponces_correct: rep_options,
-            explication: explication,
+            Explication: explication,
             points: points,
             timeQuestion: timeQuestion
         };
@@ -380,7 +380,6 @@ async function setQuestionQCM() {
 }
 
 
-
 async function setQuestionVF() {
     const id_quiz = document.getElementById('id_quizVF').value;
     // const nom_quiz = document.getElementById('nom_quiz').value;
@@ -394,10 +393,10 @@ async function setQuestionVF() {
         return;
     }
     
-    const rep_options = {
-        Vrai: rep_option_V,
-        Faux: rep_option_F
-    };
+    const rep_options = [
+         rep_option_V,
+         rep_option_F
+    ];
 
     const explication = document.getElementById('explicationVF').value;
     const points = parseInt(document.getElementById('pointsVF').value, 10);
@@ -407,9 +406,9 @@ async function setQuestionVF() {
         id_quiz: parseInt(id_quiz),
         // nom_quiz: nom_quiz,
         type: typeQuestion,
-        question: question,
+        questions: question,
         reponces_correct: rep_options,
-        explication: explication,
+        Explication: explication,
         points: points,
         timeQuestion: timeQuestion 
     };
@@ -439,7 +438,7 @@ async function setQuestionVF() {
 }
 
 
-async function setQuestionText(event) {
+async function setQuestionText() {
 
     const id_quiz = document.getElementById('id_quizText').value;
     // const nom_quiz = document.getElementById('nom_quiz').value;

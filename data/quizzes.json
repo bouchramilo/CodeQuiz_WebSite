@@ -28,5 +28,35 @@
     "imagesQuiz": "uploads\\8107133023bd4e321c2c6899caae4900",
     "status": "Active",
     "participants": 0
+  },
+  {
+    "id": 3,
+    "nom": "francais",
+    "description": "francais basics",
+    "categorie": "Langue",
+    "difficulte": "Moyenne",
+    "nbQuestions": 6,
+    "nbrQestionsQCM": 2,
+    "nbrQestionsVF": 2,
+    "nbrQestionsTxt": 2,
+    "TimeQuiz": "300",
+    "imagesQuiz": "",
+    "status": "Active",
+    "participants": 0
+  },
+  {
+    "id": 4,
+    "nom": "Programmation",
+    "description": "Programmation",
+    "categorie": "Programmation",
+    "difficulte": "Difficile",
+    "nbQuestions": 10,
+    "nbrQestionsQCM": 4,
+    "nbrQestionsVF": 3,
+    "nbrQestionsTxt": 3,
+    "TimeQuiz": "300",
+    "imagesQuiz": "uploads\\5ad5af9d717aa15346976a4c68849409",
+    "status": "Inactive",
+    "participants": 0
   }
 ]

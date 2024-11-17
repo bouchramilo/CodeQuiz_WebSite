@@ -34,10 +34,11 @@ function loadQuestions(quizId) {
       const questions = [...qcmForQuiz, ...vfForQuiz, ...textForQuiz];
       let currentQuestionIndex = 0;
 
+      let TimeTotal = 0;
       let score = 0;
       let correctAnswers = 0;
       let incorrectAnswers = 0;
-      let TimeTotal = 0;
+      const totalQuestions = questions.length;
 
       function timeQuestion() {
         // secondes écoulées
@@ -67,7 +68,7 @@ function loadQuestions(quizId) {
 
       function displayQuestion(index) {
         const questionContainer = document.getElementById("questionsForme");
-        questionContainer.innerHTML = ""; 
+        questionContainer.innerHTML = "";
 
         if (index >= questions.length) {
           questionContainer.innerHTML = "";
@@ -165,8 +166,8 @@ function loadQuestions(quizId) {
         document.querySelectorAll(".vf-button").forEach((button) => {
           button.addEventListener("click", () => handleAnswerSelection(button));
         });
-        document.querySelectorAll(".response-textarea").forEach((button) => {
-          button.addEventListener("input", () => handleAnswerSelection(button));
+        document.querySelectorAll(".btn-textarea").forEach((button) => {
+          button.addEventListener("click", () => handleAnswerSelection(button));
         });
         document
           .querySelector("#nextButton")
@@ -192,133 +193,29 @@ function loadQuestions(quizId) {
               <button type="button" class="vf-button w-full border-2 rounded-md border-white hover:border-yellow-600 flex justify-center items-center max-md:h-1/3 hover:shadow-gray-700 hover:shadow-lg" data-answer="Faux">Faux</button>
           `;
         } else if (question.type === "Textuel") {
-          return `<input type="text" class="response-textarea bg-emerald-100 w-full border-2 resize-none rounded-md border-white hover:border-yellow-600 max-md:h-full hover:shadow-gray-700 hover:shadow-lg">
-                <div class="suggestions-container"></div>`;
-        }
-      }
-
-      function handleTextualInput() {
-        const question = questions[currentQuestionIndex];
-        const correctAnswers = question.reponces_correct;
-        const textarea = document.querySelector(".response-textarea");
-
-        textarea.addEventListener("input", () => {
-          const userAnswer = textarea.value.trim().toLowerCase();
-          const isCorrect = correctAnswers.some(
-            (correctAnswer) => userAnswer === correctAnswer.trim().toLowerCase()
-          );
-
-          textarea.style.backgroundColor = isCorrect ? "green" : "red";
-          showExplication();
-          isCorrect
-            ? updateScores(true, question.points || 1)
-            : updateScores(false, question.points || 1);
-        });
-      }
-
-      function handleAnswerSelection(button) {
-        const question = questions[currentQuestionIndex];
-        const correctAnswers = question.reponces_correct;
-        const questionType = question.type;
-    
-        if (questionType === "Textuel") {
-            handleTextualInput();
-        } else {
-            const selectedAnswer = button?.dataset.answer;
-            if (selectedAnswer) {
-                disableInputs(questionType);
-                let isCorrect = false;
-    
-                if (questionType === "QCM") {
-                    isCorrect = correctAnswers.includes(selectedAnswer);
-                } else if (questionType === "V/F") {
-                    isCorrect =
-                        (selectedAnswer === "Vrai" && correctAnswers[0] === true) ||
-                        (selectedAnswer === "Faux" && correctAnswers[1] === true);
-                }
-    
-                applyVisualFeedback(button, isCorrect, questionType, correctAnswers);
-    
-                showExplication();
-                updateScores(isCorrect, question.points || 1);
-            }
-        }
-    }
-    
-    function applyVisualFeedback(button, isCorrect, questionType, correctAnswers) {
-        const options = document.querySelectorAll(
-            questionType === "V/F" ? ".vf-button" : ".option-button"
-        );
-    
-        // Parcourir toutes les options pour appliquer le style approprié
-        options.forEach((option) => {
-            const answer = option.dataset.answer;
-    
-            if (questionType === "QCM") {
-                if (correctAnswers.includes(answer)) {
-                    // Bonne réponse en vert
-                    option.style.backgroundColor = "green";
-                } else if (button.dataset.answer === answer && !isCorrect) {
-                    // Réponse incorrecte sélectionnée en rouge
-                    option.style.backgroundColor = "red";
-                } else {
-                    // Options non sélectionnées en gris
-                    option.style.backgroundColor = "gray";
-                }
-            } else if (questionType === "V/F") {
-                if (correctAnswers[0] && answer === "Vrai") {
-                    option.style.backgroundColor = "green"; // Bonne réponse (Vrai)
-                } else if (correctAnswers[1] && answer === "Faux") {
-                    option.style.backgroundColor = "green"; // Bonne réponse (Faux)
-                } else if (button.dataset.answer === answer && !isCorrect) {
-                    option.style.backgroundColor = "red"; // Mauvaise réponse sélectionnée
-                } else {
-                    option.style.backgroundColor = "gray"; // Non sélectionnée
-                }
-            }
-        });
-    }
-    
-    function showExplication() {
-        const explanationElement = document.getElementById("expl");
-        if (explanationElement) {
-            explanationElement.style.display = "block";
-        }
-    
-        const btnNext = document.getElementById("nextButton");
-        if (btnNext) {
-            btnNext.style.display = "block";
-        }
-    }
-    
-      function showExplication() {
-        const explanationElement = document.getElementById("expl");
-        if (explanationElement) {
-          explanationElement.style.display = "block";
-        }
-
-        const btnNext = document.getElementById("nextButton");
-        if (btnNext) {
-          btnNext.style.display = "block";
-        }
-      }
-
-      function disableInputs(questionType) {
-        document
-          .querySelectorAll(".option-button, .vf-button")
-          .forEach((btn) => (btn.disabled = true));
-        if (questionType === "Textuel") {
-          document.querySelector(".response-textarea").disabled = true;
+          return `<div class="flex flex-col w-full lg:h-full gap-2 max-md:h-[100%]">
+          <input type="text" class="response-textarea bg-emerald-100 w-full h-[90%] border-2 resize-none rounded-md border-white hover:border-yellow-600 max-md:h-full hover:shadow-gray-700 hover:shadow-lg">
+                  <button type="button" class="btn-textarea bg-blue-500 h-8 w-32 border-2 rounded-md border-white hover:bg-white hover:border-blue-500" data-answer="Vrai">Envoyer</button>
+                </div>`;
         }
       }
 
       function updateScores(isCorrect, points) {
-        TimeTotal += parseInt(
-          document.getElementById("timeQuestion").textContent
-        );
-        score += isCorrect ? points : 0;
-        correctAnswers += isCorrect ? 1 : 0;
-        incorrectAnswers += isCorrect ? 0 : 1;
+        const timeElement = document.getElementById("timeQuestion");
+        const time = timeElement ? parseInt(timeElement.textContent) : 0;
+        if (!isNaN(time)) {
+          TimeTotal += time;
+        }
+        // alert("`Before text: \ntrue : " + correctAnswers + " \nFalse : " + incorrectAnswers);
+
+        if (isCorrect) {
+          score += points;
+          correctAnswers++;
+        } else {
+          incorrectAnswers++;
+        }
+        // alert("After text : \ntrue : " + correctAnswers + " \nFalse : " + incorrectAnswers);
+
       }
 
       function timeQuestion(timeQuestion) {
@@ -339,6 +236,119 @@ function loadQuestions(quizId) {
         }
       }
 
+      function showExplication() {
+        const explanationElement = document.getElementById("expl");
+        if (explanationElement) {
+          explanationElement.style.display = "block";
+        }
+
+        const btnNext = document.getElementById("nextButton");
+        if (btnNext) {
+          btnNext.style.display = "block";
+        }
+      }
+
+      function handleTextualInput() {
+        const question = questions[currentQuestionIndex];
+        const correctAnswers = question.reponces_correct;
+        const textarea = document.querySelector(".response-textarea");
+        const submitButton = document.querySelector(".btn-textarea");
+        let isAnswered = false;
+      
+          if (isAnswered) return; 
+      
+          const userAnswer = textarea.value.trim().toLowerCase();
+          const isCorrect = correctAnswers.some(
+            (correctAnswer) => userAnswer === correctAnswer.trim().toLowerCase()
+          );
+      
+          textarea.style.backgroundColor = isCorrect ? "green" : "red";
+      
+          updateScores(isCorrect, question.points || 1);
+      
+          showExplication();
+      
+          isAnswered = true;
+      }
+      
+      function handleAnswerSelection(button) {
+        const question = questions[currentQuestionIndex];
+        const correctAnswers = question.reponces_correct;
+        const questionType = question.type;
+        let isCorrect = false;
+      
+        if (questionType === "Textuel") {
+          handleTextualInput();
+        } else {
+          const selectedAnswer = button?.dataset.answer;
+          if (selectedAnswer) {
+            disableInputs(questionType);
+      
+            if (questionType === "QCM") {
+              isCorrect = correctAnswers.includes(selectedAnswer);
+            } else if (questionType === "V/F") {
+              isCorrect =
+                (selectedAnswer === "Vrai" && correctAnswers[0] === true) ||
+                (selectedAnswer === "Faux" && correctAnswers[1] === true);
+            }
+          }
+        }
+      
+        if (questionType !== "Textuel") {
+          updateScores(isCorrect, question.points || 1);
+          showExplication();
+          applyVisualFeedback(button, isCorrect, questionType, correctAnswers);
+        }
+      }
+
+      function applyVisualFeedback(
+        button,
+        isCorrect,
+        questionType,
+        correctAnswers
+      ) {
+        const options = document.querySelectorAll(
+          questionType === "V/F" ? ".vf-button" : ".option-button"
+        );
+
+        // Parcourir toutes les options pour appliquer le style approprié
+        options.forEach((option) => {
+          const answer = option.dataset.answer;
+
+          if (questionType === "QCM") {
+            if (correctAnswers.includes(answer)) {
+              // Bonne réponse en vert
+              option.style.backgroundColor = "green";
+            } else if (button.dataset.answer === answer && !isCorrect) {
+              // Réponse incorrecte sélectionnée en rouge
+              option.style.backgroundColor = "red";
+            } else {
+              // Options non sélectionnées en gris
+              option.style.backgroundColor = "gray";
+            }
+          } else if (questionType === "V/F") {
+            if (correctAnswers[0] && answer === "Vrai") {
+              option.style.backgroundColor = "green"; // Bonne réponse (Vrai)
+            } else if (correctAnswers[1] && answer === "Faux") {
+              option.style.backgroundColor = "green"; // Bonne réponse (Faux)
+            } else if (button.dataset.answer === answer && !isCorrect) {
+              option.style.backgroundColor = "red"; // Mauvaise réponse sélectionnée
+            } else {
+              option.style.backgroundColor = "gray"; // Non sélectionnée
+            }
+          }
+        });
+      }
+
+      function disableInputs(questionType) {
+        document
+          .querySelectorAll(".option-button, .vf-button")
+          .forEach((btn) => (btn.disabled = true));
+        if (questionType === "Textuel") {
+          document.querySelector(".response-textarea").disabled = true;
+        }
+      }
+
       function IMGtypeQuestion(question) {
         if (question.type === "QCM") {
           return "images/icones/questionQCM.png";
@@ -347,7 +357,7 @@ function loadQuestions(quizId) {
         }
         return "images/icones/questionText.png";
       }
-
+      // alert("true : " + correctAnswers + " \nFalse : " + correctAnswers);
       displayQuestion(currentQuestionIndex);
     })
     .catch((error) => {

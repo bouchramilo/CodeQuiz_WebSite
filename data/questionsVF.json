@@ -41,13 +41,73 @@
   {
     "id_quiz": 2,
     "type": "V/F",
-    "question": "2*2=4",
-    "reponces_correct": {
-      "Vrai": true,
-      "Faux": false
-    },
-    "explication": "2*2=4",
+    "questions": "2*2=4",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "2*2=4",
     "points": 2,
     "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 3,
+    "type": "V/F",
+    "questions": "Le mot beau est un adjectif.",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "Oui, c'est un adjectif",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 3,
+    "type": "V/F",
+    "questions": "Le mot beau est un verbe.",
+    "reponces_correct": [
+      false,
+      true
+    ],
+    "Explication": "non, c'est un adjectif",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 4,
+    "type": "V/F",
+    "questions": "Le mot-clé public en Java signifie que la méthode ou variable est accessible depuis n'importe quelle autre classe.",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "Le mot-clé public en Java signifie que la méthode ou variable est accessible depuis n'importe quelle autre classe.",
+    "points": 2,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 4,
+    "type": "V/F",
+    "questions": "En C++, le tableau commence à l'index 1 par défaut.",
+    "reponces_correct": [
+      false,
+      true
+    ],
+    "Explication": "En C++, le tableau commence à l'index 0 par défaut.",
+    "points": 1,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 4,
+    "type": "V/F",
+    "questions": "En C, un tableau des 10 entiers déclare par int Tab[9] ;",
+    "reponces_correct": [
+      true,
+      false
+    ],
+    "Explication": "oui",
+    "points": 2,
+    "timeQuestion": "15"
   }
 ]

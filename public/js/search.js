@@ -58,10 +58,11 @@ let filter1 = document.getElementById("difficulte");
         let query = filter3.value.toLowerCase();
 
         Array.from(quizsList_f3.children).forEach(quiz => {
-            let titleElement = quiz.querySelector('.stts'); 
-            if (titleElement) {
-                let title = titleElement.textContent.toLowerCase();
-                quiz.style.display = title.includes(query) || query === "" ? "" : "none";
+            let StatusElement = quiz.querySelector('.stts'); 
+            if(filter3.value.toLowerCase() === StatusElement.textContent.toLowerCase()){
+                quiz.style.display = "block";
             }
+            else
+                quiz.style.display = "none";
         });
     });

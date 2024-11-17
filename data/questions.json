@@ -65,7 +65,7 @@
   {
     "id_quiz": 2,
     "type": "QCM",
-    "question": "1*1",
+    "questions": "1*1",
     "reponses": [
       "1",
       "2",
@@ -75,8 +75,110 @@
     "reponces_correct": [
       "1"
     ],
-    "explication": "1*1=1",
+    "Explication": "1*1=1",
     "points": 1,
     "timeQuestion": "10"
+  },
+  {
+    "id_quiz": 3,
+    "type": "QCM",
+    "questions": "Quel est l'article défini pour un mot féminin singulier en français ?",
+    "reponses": [
+      "Le",
+      "La",
+      "Les",
+      "De"
+    ],
+    "reponces_correct": [
+      "La"
+    ],
+    "Explication": "La c'est la réponse",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 3,
+    "type": "QCM",
+    "questions": "Quel est l'article défini pour un mot masculin singulier en français ?",
+    "reponses": [
+      "Le",
+      "La",
+      "Les",
+      "De"
+    ],
+    "reponces_correct": [
+      "Le"
+    ],
+    "Explication": "le c'est la reponse",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 4,
+    "type": "QCM",
+    "questions": "Quel est le résultat de l'expression suivante en JavaScript : 2 + '2' ?",
+    "reponses": [
+      "4",
+      "'22'",
+      "Erreur",
+      "NaN"
+    ],
+    "reponces_correct": [
+      "'22'"
+    ],
+    "Explication": "la concaténation",
+    "points": 2,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 4,
+    "type": "QCM",
+    "questions": "En Python, quelle est la fonction qui permet de lire un fichier ?",
+    "reponses": [
+      "read()",
+      "open()",
+      "input()",
+      "file()"
+    ],
+    "reponces_correct": [
+      "open()"
+    ],
+    "Explication": "En Python, la fonction open() est utilisée pour ouvrir un fichier, et elle retourne un objet fichier.",
+    "points": 2,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 4,
+    "type": "QCM",
+    "questions": "Dans quel langage de programmation la syntaxe suivante est-elle valide : let x = 10; ?",
+    "reponses": [
+      "Java",
+      "JavaScript",
+      "Python",
+      "C++"
+    ],
+    "reponces_correct": [
+      "JavaScript"
+    ],
+    "Explication": "La syntaxe let x = 10; est utilisée en JavaScript pour déclarer une variable x et lui attribuer la valeur 10. Le mot-clé let permet de déclarer des variables à portée de bloc, et cette syntaxe est valide dans les versions modernes de JavaScript (ES6 et au-delà).",
+    "points": 1,
+    "timeQuestion": "15"
+  },
+  {
+    "id_quiz": 4,
+    "type": "QCM",
+    "questions": "le syntaxe de do-while en C ?",
+    "reponses": [
+      "do{...}while(condition)",
+      "do{...}while(condition);",
+      "do(condition)while{};",
+      "do(condition)while{}"
+    ],
+    "reponces_correct": [
+      "do{...}while(condition);"
+    ],
+    "Explication": "do{\n//instructions ;\n}while(condition);",
+    "points": 3,
+    "timeQuestion": "15"
   }
 ]

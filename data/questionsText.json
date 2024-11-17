@@ -42,5 +42,75 @@
     "Explication": "5*9=15",
     "points": 3,
     "timeQuestion": "20"
+  },
+  {
+    "id_quiz": 3,
+    "type": "Textuel",
+    "questions": "Citez un synonyme de content.",
+    "reponces_correct": [
+      "Heureux",
+      "Joyeux",
+      "satisfait",
+      "heureux"
+    ],
+    "Explication": "Heureux, \nJoyeux, \nsatisfait",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 3,
+    "type": "Textuel",
+    "questions": "Comment dit-on thank you en français ?",
+    "reponces_correct": [
+      "Merci !",
+      "Merci",
+      "merci",
+      "merci !"
+    ],
+    "Explication": "Merci",
+    "points": 1,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 4,
+    "type": "Textuel",
+    "questions": "Expliquez ce qu'est une boucle for en JavaScript et donnez un exemple.",
+    "reponces_correct": [
+      "une boucle for permet d'itérer sur les propriétés d'un objet en JavaScript.",
+      "une boucle for est utilisée pour exécuter un bloc de code un nombre spécifique de fois.",
+      "une boucle for est utilisée pour parcourir des éléments d'un tableau en C uniquement.",
+      "une boucle for permet de déclarer et initialiser une variable dans une fonction."
+    ],
+    "Explication": "une boucle for permet d'itérer sur les propriétés d'un objet en JavaScript.\nune boucle for est utilisée pour exécuter un bloc de code un nombre spécifique de fois.\nune boucle fune boucle for permet de déclarer et initialiser une variable dans une fonction.or est utilisée pour parcourir des éléments d'un tableau en C uniquement.",
+    "points": 3,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 4,
+    "type": "Textuel",
+    "questions": "Quelle est la différence entre == et === en JavaScript ?",
+    "reponces_correct": [
+      "== compare uniquement les valeurs, tandis que === compare à la fois les valeurs et les types de données.",
+      "== compare les valeurs et les types de données, tandis que === compare seulement les valeurs.",
+      "== est utilisé pour les chaînes de caractères, tandis que === est utilisé pour les nombres.",
+      "== est plus rapide que === pour les comparaisons dans le code JavaScript."
+    ],
+    "Explication": "== compare uniquement les valeurs, tandis que === compare à la fois les valeurs et les types de données.\n== compare les valeurs et les types de données, tandis que === compare seulement les valeurs.\n== est utilisé pour les chaînes de caractères, tandis que === est utilisé pour les nombres.\n== est plus rapide que === pour les comparaisons dans le code JavaScript.",
+    "points": 3,
+    "timeQuestion": "30"
+  },
+  {
+    "id_quiz": 4,
+    "type": "Textuel",
+    "questions": "Décrivez le concept de \"pointeur\" en C et donnez un exemple d'utilisation.",
+    "reponces_correct": [
+      "Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable.",
+      " Un pointeur est une fonction qui retourne une adresse mémoire.",
+      "Un pointeur est une variable qui stocke une chaîne de caractères en C.",
+      "Un pointeur est une structure de données utilisée pour stocker des objets en C."
+    ],
+    "Explication": "Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable.\n Un pointeur est une fonction qui retourne une adresse mémoire.\nUn pointeur est une variable qui stocke une chaîne de caractères en C.\nUn pointeur est une structure de données utilisée pour stocker des objets en C.",
+    "points": 3,
+    "timeQuestion": "30"
   }
 ]
